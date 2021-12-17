@@ -1,6 +1,5 @@
 //Управление мобильным меню
 (function () {
-
   const mobileMenuElements = document.querySelectorAll('.js__menu');
   const colorMenu = document.querySelector('.js__menu-color');
   const cartColor = document.querySelector('.js__cart-color');

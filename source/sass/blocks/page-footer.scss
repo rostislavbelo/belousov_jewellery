@@ -1,0 +1,24 @@
+.page-footer {
+  margin: 0 0 0 0;
+  padding: 100px 0 99px 0;
+  width: 100%;
+  background-color: #000000;
+  min-height: 338px;
+  box-sizing: border-box;
+}
+
+.page-footer__wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.page-footer__subscription {
+  width: 50%;
+}
+
+.page-footer__information {
+  width: 50%;
+}
