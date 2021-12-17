@@ -1,0 +1,26 @@
+@media (max-width: $desktop-width) {
+  .js__menu--hidden {
+    display: none;
+  }
+
+  .js__menu-color--change {
+    background: #ffffff;
+  }
+
+  .js__cart-color--change {
+    stroke: #1d1613;
+  }
+
+  .js__logo-color--change {
+    fill: #a87b62;
+  }
+
+  .js__button-color--change::before {
+    background: #1d1613;
+    box-shadow: 0 6px 0 0 #1d1613, 0 -6px 0 0 #1d1613;
+  }
+
+  .js__menu-button--show {
+    display: block;
+  }
+}

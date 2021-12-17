@@ -124,6 +124,7 @@
     margin: 0 auto;
     padding: 30px 45px 80px 45px;
     box-sizing: border-box;
+    background: #A87B62;
   }
 
   .page-header__wrapper {
@@ -225,13 +226,17 @@
 
   .page-header__cart-img {
     display: block;
-    stroke: #1d1613;
+    stroke: #ffffff;
     width: 18px;
     height: 16px;
 
     &:hover {
       opacity: 0.7;
     }
+  }
+
+  .page-header__logo-img{
+    fill: #ffffff;
   }
 
   .page-header__about-company {
