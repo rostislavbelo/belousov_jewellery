@@ -1,5 +1,5 @@
 .main-nav {
-  padding: 0;
+  padding: 18px 0 0 0;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -26,13 +26,22 @@
     left: 4px;
     box-shadow: 0 6px 0 0 #1d1613, 0 -6px 0 0 #1d1613;
   }
+
+  &:hover::before {
+    opacity: 0.5;
+  }
+
+  &:focus::before {
+    opacity: 0.7;
+  }
 }
 
 .main-nav__list {
-  max-width: 100%;
+  max-width: 85%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   list-style-type: none;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0 -35px 0 0;
 }
@@ -44,11 +53,19 @@
 .main-nav__link {
   display: block;
   text-decoration: none;
-  font-family: "Poppins";
+  font-family: $sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #1D1613;
+  color: #1d1613;
+
+  &:hover {
+    color: #a87b62;
+  }
+
+  &:focus {
+    color: rgba(168, 123, 98, 0.7);
+  }
 }
 
 @media (max-width: $desktop-width) {
@@ -76,12 +93,20 @@
   }
 
   .main-nav__link {
-    font-family: 'Poppins';
+    font-family: $sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      color: rgba(255, 255, 255, 0.7);
+    }
   }
 
   .main-nav__button::before {
