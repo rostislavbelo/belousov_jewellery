@@ -275,11 +275,6 @@
     width: 90%;
   }
 
-
-  .page-footer__information-columns-item {
-    // width: 33.33%;
-  }
-
   .page-footer__subscription h3 {
     font-family: $serif;
     font-weight: bold;
@@ -332,7 +327,6 @@
     }
   }
 
-
   .page-footer__form input {
     display: block;
     width: 100%;
@@ -376,14 +370,14 @@
     width: 90%;
   }
 
-  .page-footer__column-social-img {
+  .page-footer__information-link svg {
     fill: #ffffff;
     margin: 2px 15px 0 0;
     width: 15px;
     height: 15px;
   }
 
-  .page-footer__column-social-facebook {
+  .page-footer__column-social-facebook svg {
     margin: 3px 18px 0 3px;
     width: 8px;
     height: 15px;
@@ -589,14 +583,14 @@
     max-width: 527px;
   }
 
-  .page-footer__column-social-img {
+  .page-footer__information-link svg {
     fill: #ffffff;
     margin: 2px 15px 0 0;
     width: 15px;
     height: 15px;
   }
 
-  .page-footer__column-social-facebook {
+  .page-footer__column-social-facebook svg {
     margin: 3px 18px 0 3px;
     width: 8px;
     height: 15px;
