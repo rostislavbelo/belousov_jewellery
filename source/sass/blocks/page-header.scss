@@ -302,6 +302,14 @@
 
   .page-header__login-link {
     margin-bottom: 80px;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      color: rgba(255, 255, 255, 0.7);
+    }
   }
 
   .page-header__cart-link span,
