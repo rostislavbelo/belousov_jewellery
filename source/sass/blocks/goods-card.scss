@@ -1,0 +1,116 @@
+.goods-card__list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 52px 0;
+  //pointer-events: none;
+  //overflow-x: scroll;
+}
+
+.goods-card__item {
+  padding: 0;
+  margin: 0 30px 40px 0;
+  max-width: 270px;
+  height: max-content;
+}
+
+.goods-card__link {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.goods-card__item h4 {
+  padding: 0;
+  margin: 0 0 0 0;
+  font-family: $sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #1D1613;
+  text-align: center;
+}
+
+.goods-card__item p {
+  padding: 0;
+  margin: 0 0 0 0;
+  font-family: $sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 130%;
+  text-align: center;
+  color: #1D1613;
+}
+
+.goods-card__img-content picture,
+.goods-card__img-content img {
+  width: 100%;
+  height: 100%;
+}
+
+.goods-card__img-content {
+  width: 270px;
+  height: 272px;
+
+  @media (min-width: 1023px) and (max-width: 1250px) {
+    width: calc(1vw * 270 / (1250 / 100));
+    height: calc(1vw * 272 / (1250 / 100));
+  }
+}
+
+@media (max-width: $desktop-width) {
+
+  .goods-card__list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto 52px;
+    overflow: visible;
+  }
+
+  .goods-card__img-content {
+    width: 206px;
+    height: 208px;
+
+    @media (min-width: 767px) and (max-width: 1024px) {
+      width: calc(1vw * 324 / (767 / 100));
+      height: calc(1vw * 340 / (767 / 100));
+    }
+  }
+
+  .new-goods__item {
+    padding: 0;
+    margin: 0 0 0 0;
+    max-width: unset;
+    overflow: visible;
+  }
+}
+
+@media (max-width: $tablet-width) {
+
+  .goods-card__list {
+    width: unset;
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto 52px;
+    overflow: visible;
+  }
+
+  .goods-card__img-content {
+    width: 130px;
+    height: 136px;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      width: calc(1vw * 130 / (320 / 100));
+      height: calc(1vw * 136 / (320 / 100));
+    }
+  }
+}
