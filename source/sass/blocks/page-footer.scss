@@ -1,6 +1,6 @@
 .page-footer {
   margin: 0 0 0 0;
-  padding: 100px 0 99px 0;
+  padding: 89px 0 99px 0;
   width: 100%;
   background-color: #000000;
   min-height: 338px;
@@ -16,26 +16,34 @@
 }
 
 .page-footer__subscription {
-  width: 50%;
+  width: 45%;
+  padding: 0 26px 0 0;
+  box-sizing: border-box;
+
+  @media (min-width: 1023px) and (max-width: 1350px) {
+    padding-right: calc(1vw * 26 / (1350 / 100));
+  }
 }
 
 .page-footer__information {
-  width: 50%;
+  width: 55%;
 }
 
 .page-footer__information-columns-list {
   display: grid;
-  grid-template-columns: 40% 30% 30%;
+  grid-template-columns: 34% 32% 1fr;
   grid-template-rows: 1fr;
   row-gap: 30px;
   column-gap: 20px;
   width: 100%;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 6px 0 0 66px;
 
-  @media (min-width: 1023px) and (max-width: 1350px) {
-    column-gap: calc(1vw * 20 / (1350 / 100));
+  @media (min-width: 1023px) and (max-width: 1200px) {
+    column-gap: calc(1vw * 20 / (1200 / 100));
+    padding-left: calc(1vw * 66 / (1200 / 100));
+    grid-template-columns: 34% 27% 1fr;
   }
 }
 
@@ -79,7 +87,7 @@
 }
 
 .page-footer__information-link:not(:last-child) {
-  margin-bottom: 30px;
+  margin-bottom: 21px;
 }
 
 .page-footer__information-link h3 {
@@ -94,26 +102,26 @@
 }
 
 .page-footer__subscription h3 {
-  max-width: 90%;
+  max-width: 100%;
   font-family: $serif;
   font-weight: bold;
   font-size: 34px;
   line-height: 130%;
-  letter-spacing: 0.03em;
+  word-spacing: 0.14em;
   padding: 0;
-  margin: 0 0 25px 0;
+  margin: 0 0 10px;
   color: #ffffff;
 }
 
 .page-footer__subscription p {
-  max-width: 90%;
+  max-width: 100%;
   font-family: $sans-serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 130%;
   color: #9b9997;
   padding: 0;
-  margin: 0 0 39px 0;
+  margin: 0 0 33px 0;
 }
 
 .page-footer__button-submit {
@@ -132,8 +140,8 @@
   background-repeat: no-repeat;
   background-position: right center;
   border: none;
-  top: 6px;
-  right: 0;
+  top: 9px;
+  right: -1px;
   cursor: pointer;
 
   &:hover {
@@ -188,7 +196,7 @@
 
 .page-footer__form {
   position: relative;
-  width: 90%;
+  width: 100%;
 }
 
 .page-footer__information-link svg {
