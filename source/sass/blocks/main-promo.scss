@@ -1,5 +1,5 @@
 .main-promo {
-  margin: 0 0 130px 0;
+  margin: 0 0 120px 0;
   padding: 0;
   width: 100%;
 }
@@ -10,7 +10,7 @@
   background-position: center;
   background-size: cover;
   min-height: 463px;
-  padding: 195px 0 50px 0;
+  padding: 181px 0 50px 0;
   box-sizing: border-box;
 
   @media (min-resolution: 2dppx) {
@@ -21,9 +21,10 @@
 }
 
 .main-promo__wrapper p {
+  text-transform: uppercase;
   max-width: 75%;
   padding: 0;
-  margin: 0 auto;
+  margin: 0 auto -6px;
   text-align: center;
   font-family: $serif;
   font-weight: bold;

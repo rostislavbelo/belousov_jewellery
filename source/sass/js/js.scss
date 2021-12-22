@@ -1,3 +1,20 @@
+.js__questions--hidden span {
+  display: none;
+}
+
+.js__questions--hidden p::before {
+  transform: rotate(-45deg);
+  top: 46px;
+}
+
+.js__questions--hidden p {
+  padding-bottom: 43px;
+}
+
+.js__questions p {
+  cursor: pointer;
+}
+
 .js__styles-swiper-list--no-js {
   overflow-x: scroll;
 }

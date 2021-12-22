@@ -124,384 +124,45 @@
   }
 }());
 
-/*
+//Управление аккордеоном секции Questions.
+(function () {
 
-  window.addEventListener('resize', () => {
-    if (window.screen.width <= DESKTOP_WIDTH) {
-      initializeSwipe(true);
-    } else {
-      if (window.screen.width <= DESKTOP_WIDTH) {
-        initializeSwipe(false)
-      }
-    }
-  })
+  const questionsRest = document.querySelectorAll('.js__questions:not(:first-child)');
+  const questionsAll = document.querySelectorAll('.js__questions');
 
-   */
+  if (questionsRest && questionsAll) {
 
-/* new Swiper('.swiper', {
-    breakpoints: {
-
-      0: {SWIPER_MOBILE},
-
-      TABLET_WIDTH: {SWIPE_TABLET},
-
-      DESKTOP_WIDTH: {SWIPER_DESKTOP},
-    }
-  });
-   */
-/*
-  new Swiper('.swiper', {
-    breakpoints: {
-
-      0: { SWIPER_MOBILE },
-
-      TABLET_WIDTH: { SWIPE_TABLET },
-
-      DESKTOP_WIDTH: { SWIPER_DESKTOP },
-    }
-  });
-   */
-
-/* const pepepe = () => {
-    window.addEventListener('resize', () => {
-      let rarara = window.screen.width < 1023;
-      return rarara;
+    questionsRest.forEach((question) => {
+      question.classList.add('js__questions--hidden');
     });
-  }
-
-  console.log(pepepe())
-   */
 
 
-/* if (screen.width > DESKTOP_WIDTH) {
-    initializeSwipeDesktop();
-  }
-
-  if (screen.width <= DESKTOP_WIDTH && screen.width > TABLET_WIDTH) {
-    initializeSwipeTablet();
-  }
-
-  if (screen.width <= TABLET_WIDTH) {
-    initializeSwipeMobile();
-  }
-
-  const setTimeOutResizeSwipe = () => {
-
-    setTimeout(() => window.addEventListener('resize', () => {
-      initializeSwipeDesktop();
-      initializeSwipeTablet();
-    }), 400);
-
-
-    clearTimeout(() => window.addEventListener('resize', () => {
-      initializeSwipeDesktop();
-      initializeSwipeTablet();
-
-    }), 500);
-
-
-  }
-
-  setTimeOutResizeSwipe();
-   */
-
-/* const DESKTOP_WIDTH = 1023;
-  const TABLET_WIDTH = 767;
-  const SLIDES_GROUP_MOBILE = 2;
-  const SLIDES_VIEW_DESKTOP = 4;
-  const SLIDES_VIEW_MOBILE = 2;
-  const SLIDES_GROUP_DESKTOP = 4;
-  const PAGINATION_MOBILE = 'fraction';
-  const PAGINATION_DESKTOP = 'bullets';
-  const SPACE = 30;
-
-  const RENDER_DESKTOP = (index, className) => {
-    return '<span class="' + className + '">' + (index + 1) + "</span>";
-  };
-
-
-  const startSwiper = (type, view, group, space, touch, render) => {
-
-    new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: type,
-        clickable: true,
-        renderBullet: render,
-      },
-
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      simulateTouch: touch,
-      slidesPerView: view,
-      slidesPerGroup: group,
-      spaceBetween: space,
-      loop: true,
-    },
-    );
-  }
-
-  const initializeSwipe = () => {
-
-    if (screen.width > DESKTOP_WIDTH) {
-      startSwiper(PAGINATION_DESKTOP, SLIDES_VIEW_DESKTOP, SLIDES_GROUP_DESKTOP, SPACE, false, RENDER_DESKTOP);
-    }
-
-    if (screen.width <= DESKTOP_WIDTH || screen.width > TABLET_WIDTH) {
-      startSwiper(PAGINATION_DESKTOP, SLIDES_VIEW_MOBILE, SLIDES_GROUP_MOBILE, SPACE, true, RENDER_DESKTOP);
-    }
-
-    if (screen.width <= TABLET_WIDTH) {
-      startSwiper(PAGINATION_MOBILE, SLIDES_VIEW_MOBILE, SLIDES_GROUP_MOBILE, SPACE, true, false);
-    }
-
-
-  }
-
-  initializeSwipe();
-
-
-  const setTimeOutResizeSwipe = () => {
-
-    setTimeout(() => window.addEventListener('resize', () => {
-      initializeSwipe();
-    }), 400);
-
-
-    clearTimeout(() => window.addEventListener('resize', () => {
-      initializeSwipe();
-
-    }), 500);
-
-
-  }
-
-  setTimeOutResizeSwipe();
-   */
-
-//startSwiper(TABLET_WIDTH, DESKTOP_WIDTH, PAGINATION_DESKTOP, SLIDES_VIEW_DESKTOP, SLIDES_GROUP_MOBILE, SPACE, true, RENDER_DESKTOP);
-
-
-/* if (screen.width <= 767) {
-    new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      simulateTouch: true,
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 30,
-      loop: true,
-    },
-    );
-  };
-  };
-
-  startSwiper();
-
-   */
-
-
-/* new Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      type: 'bullets',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + "</span>";
-      },
-    },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    simulateTouch: true,
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-    spaceBetween: 30,
-    loop: true,
-  },
-  );
-  };
-  startSwiper();
-   */
-
-
-/*
-
-  new Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      type: 'bullets',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + "</span>";
-      },
-    },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    simulateTouch: false,
-    slidesPerView: 4,
-    slidesPerGroup: 4,
-    spaceBetween: 30,
-    loop: true,
-  },
-  )
-  }; */
-
-
-/* const swipe = () => {
-    if (screen.width <= 1023) {
-      new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          type: 'bullets',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-          },
-        },
-        simulateTouch: true,
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 30,
-        loop: true,
-      },
-      )
-    } else {
-      startSwiper();
-    }
-
-    if (screen.width <= 768) {
-      new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        simulateTouch: true,
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 30,
-        loop: true,
-      },
-      )
-    } else {
-      startSwiper();
-    }
-  }
-
-  const setTimeOutResize = () => {
-    setTimeout(() => window.addEventListener('resize', () => {
-      swipe()
-    }), 400);
-
-    clearTimeout(() => window.addEventListener('resize', () => {
-      swipe()
-    }), 500);
-  }
-
-  setTimeOutResize();
-   */
-
-/* const swipe = () => {
-    if (document.documentElement.clientWidth <= 768) {
-      new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        simulateTouch: true,
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 30,
-        loop: true,
+    questionsAll.forEach((question) => {
+      const answer = question.querySelector('p');
+      answer.addEventListener('click', () => {
+        question.classList.toggle('js__questions--hidden');
       });
-    } else {
-      startSwiper();
-    };
-  };
+    });
 
-  swipe();
-   */
+    /*     questionsAll.forEach((question) => {
 
+          questionTitles.forEach((title) => {
+            title.addEventListener('click', () => {
 
-/* Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+              question.classList.toggle('js__questions--hidden');
+            })
+          })
+        })
 
-  new Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + "</span>";
-      },
-    },
-  });
-   */
+     */
 
+    /*     questionTitles.forEach((title) => {
+          title.addEventListener('click', () => {
+            questionsAll.forEach((question) => {
+              question.classList.toggle('js__questions--hidden');
+            })
+          })
+        }) */
+  }
 
-/* pagination: {
-    el: ".swiper-pagination",
-      clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-  //Отключение перетаскивания
-  simulateTouch: false,
-
-    //выводить по количеству
-    slidesPerView: 4,
-
-      //Пролистывать по количеству
-      slidesPerGroup: 4,
-
-        //Интервал
-        spaceBetween: 30,
-
-          //Замыкание слайдера в кольцо
-          loop: true,
-  });
-
-  var swiper = new Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + "</span>";
-      },
-    },
-  });
-   */
+}());

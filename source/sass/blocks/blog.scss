@@ -1,7 +1,7 @@
 .blog {
   width: 100%;
   padding: 0;
-  margin: 0 0 150px 0;
+  margin: 0 0 119px 0;
 }
 
 .blog__wrapper {
@@ -12,35 +12,37 @@
 
 .blog__wrapper h2 {
   padding: 0;
-  margin: 0 auto;
+  margin: 0 auto 19px;
   font-family: $serif;
   font-weight: bold;
   font-size: 34px;
   line-height: 130%;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #1D1613;
+  color: #1d1613;
   max-width: 80%;
 }
 
-.blog__link {
+.blog__main-link {
+  height: max-content;
   display: block;
   text-decoration: none;
-  max-width: 100%;
+  max-width: 85%;
   margin: 0 auto 60px;
 }
 
-.blog__link p {
+.blog__main-link p {
   font-family: $sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
   text-align: center;
-  color: #1D1613;
+  color: #1d1613;
   border-bottom: 1px solid rgb(168, 123, 98);
   max-width: max-content;
-  padding: 0;
-  margin: 0;
+  padding: 0 0 4px 0;
+  margin: 0 auto;
+
 
   &:hover {
     color: #a87b62;
@@ -51,7 +53,6 @@
     border-color: rgba(168, 123, 98, 0.7);
   }
 }
-
 
 .blog__list {
   list-style-type: none;
@@ -169,29 +170,39 @@
   text-align: center;
   color: #9b9997;
   display: block;
+  margin: 0 0 13px 0;
 }
 
 .blog__item h3 {
   padding: 0;
-  margin: 0;
+  margin: 0 0 37px 0;
   font-family: $serif;
   font-weight: 600;
   font-size: 26px;
   line-height: 130%;
   text-align: center;
   color: #000000;
+  max-width: 170px;
+}
+
+.blog__link {
+  height: max-content;
+  display: block;
+  text-decoration: none;
+  max-width: 100%;
+  margin: 0 auto 15px;
 }
 
 .blog__link p {
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding-bottom: 4px;
   font-family: $sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
   text-align: center;
-  color: #1D1613;
+  color: #1d1613;
   display: block;
   border-bottom: 1px solid #a87b62;
 
@@ -209,16 +220,15 @@
   width: 50%;
   background: #f0eae4;
   box-sizing: border-box;
-  padding: 20px 48px;
-  align-items: flex-end;
+  padding: 67px 20px 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
-  @media (min-width: 1023px) and (max-width: 1160px) {
-    padding: 20px calc(1vw * 37 / (1160 / 100));
+  @media (min-width: 1023px) and (max-width: 1240px) {
+    padding-top: calc(1vw * 67 / (1240 / 100));
   }
 }
 
