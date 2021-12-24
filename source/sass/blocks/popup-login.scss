@@ -8,6 +8,7 @@
   justify-content: center;
   display: none;
   overflow-y: scroll;
+  padding: 100px 0 0 0;
 
   ::-webkit-scrollbar {
     display: none;
@@ -16,45 +17,16 @@
 
 .popup-login__form {
   position: fixed;
-  margin: 100px auto;
-}
-
-.login-form {
-  width: 430px;
-  height: 586px;
-  box-sizing: border-box;
-  background-color: #f0eae4;
-  background-image: url("/img/login/background-desktop.jpg");
-  background-position: top;
-  background-size: contain;
-  background-repeat: no-repeat;
-  box-shadow: 0px 5px 32px rgba(226, 221, 215, 0.24);
-  padding: 198px 45px 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  margin: auto;
   overflow-y: scroll;
 }
 
-.login-form__remember-password {
+.popup-login__button-closed {
   display: block;
-  text-decoration: none;
-}
-
-.login-form__button-closed {
   cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
   width: 20px;
   height: 20px;
-}
-
-.login-form__button-login {
-  cursor: pointer;
-}
-
-.login-form__input {
-  margin: 0 0 40px 0;
 }

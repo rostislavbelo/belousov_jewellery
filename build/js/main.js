@@ -59,12 +59,14 @@
   const buttonClosed = document.querySelector('.js__popup-closed');
   const loginSended = document.querySelector('.js__send-form');
   const body = document.querySelector('.js__body');
+  const inputActive = document.querySelector('.login-form__input-login input');
 
   if (loginButtonStart && popupLogin) {
 
     const showPopup = () => {
       popupLogin.classList.add('js__popup-login--show');
       body.classList.add('js__body--no-scroll');
+      inputActive.focus();
     };
 
     const hiddenPopup = () => {
