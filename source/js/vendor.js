@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 /**
  * Swiper 7.3.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions

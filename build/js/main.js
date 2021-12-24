@@ -6,28 +6,100 @@
   const logoColor = document.querySelector('.js__logo-color');
   const buttonColor = document.querySelector('.js__button-color');
   const buttonMenu = document.querySelector('.js__menu-button');
+  const blockHidden = document.querySelectorAll('.js__block-hidden');
+  const stylesMenu = document.querySelector('.js__styles-height');
+  const itemMenu = document.querySelectorAll('.js__menu-item');
 
-  if (mobileMenuElements && colorMenu && cartColor && logoColor && buttonColor) {
-    mobileMenuElements.forEach((element) => {
-      element.classList.add('js__menu--hidden');
-    });
-    colorMenu.classList.add('js__menu-color--change');
-    cartColor.classList.add('js__cart-color--change');
-    logoColor.classList.add('js__logo-color--change');
-    buttonColor.classList.add('js__button-color--change');
-    buttonMenu.classList.add('js__menu-button--show');
+  if (mobileMenuElements && colorMenu && cartColor && logoColor && buttonColor && blockHidden) {
+
+    const startJsMenu = () => {
+      mobileMenuElements.forEach((element) => {
+        element.classList.add('js__menu--hidden');
+      });
+      colorMenu.classList.add('js__menu-color--change');
+      cartColor.classList.add('js__cart-color--change');
+      logoColor.classList.add('js__logo-color--change');
+      buttonColor.classList.add('js__button-color--change');
+      buttonMenu.classList.add('js__menu-button--show');
+    };
+
+    startJsMenu();
 
     buttonMenu.addEventListener('click', () => {
       mobileMenuElements.forEach((element) => {
         element.classList.toggle('js__menu--hidden');
       });
+      blockHidden.forEach((element) => {
+        element.classList.toggle('js__block-hidden--active');
+      });
+      stylesMenu.classList.toggle('js__styles-height--active');
       colorMenu.classList.toggle('js__menu-color--change');
       cartColor.classList.toggle('js__cart-color--change');
       logoColor.classList.toggle('js__logo-color--change');
       buttonColor.classList.toggle('js__button-color--change');
     });
+
+    itemMenu.forEach((element) => {
+      element.addEventListener('click', () => {
+        blockHidden.forEach((block) => {
+          block.classList.remove('js__block-hidden--active');
+        });
+        stylesMenu.classList.remove('js__styles-height--active');
+
+        startJsMenu();
+      });
+    });
   }
 }());
+
+//Управление попапом
+(function () {
+  const loginButtonStart = document.querySelector('.js__login');
+  const popupLogin = document.querySelector('.js__popup-login');
+  const buttonClosed = document.querySelector('.js__popup-closed');
+  const loginSended = document.querySelector('.js__send-form');
+  const body = document.querySelector('.js__body');
+
+  if (loginButtonStart && popupLogin) {
+
+    const showPopup = () => {
+      popupLogin.classList.add('js__popup-login--show');
+      body.classList.add('js__body--no-scroll');
+    };
+
+    const hiddenPopup = () => {
+      popupLogin.classList.remove('js__popup-login--show');
+      body.classList.remove('js__body--no-scroll');
+    };
+
+    loginButtonStart.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      showPopup();
+    });
+
+    buttonClosed.addEventListener('click', () => {
+      hiddenPopup();
+    });
+
+    loginSended.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      hiddenPopup();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hiddenPopup();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (e.target === popupLogin) {
+        hiddenPopup();
+      }
+    });
+  }
+}());
+
 
 //Управление слайдером-свайпером.
 (function () {
@@ -81,7 +153,7 @@
         prevEl: '.swiper-button-prev',
       },
       simulateTouch: true,
-      slidesPerView: 2.000000000000001,
+      slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 30,
     };
@@ -98,29 +170,23 @@
       simulateTouch: true,
       slidesPerView: 2,
       slidesPerGroup: 2,
-      spaceBetween: '10.65%',
+      spaceBetween: 30,
     };
 
     const swiperArea = document.querySelector('.swiper');
     const DESKTOP_WIDTH = 1023;
-    const TABLET_WIDTH = 767;
+    const desktopNoTouchValue = window.screen.width <= DESKTOP_WIDTH;
 
-    const desktopNoTouchValue = window.screen.width <= 1023;
-
-    const initializeSwipe = (screen) => {
-
-      new Swiper(swiperArea, {
-        //  simulateTouch: screen,
-        loop: true,
-        breakpoints: {
-          1023: SWIPER_DESKTOP,
-          767: SWIPE_TABLET,
-          0: SWIPER_MOBILE,
-        },
-      });
-    };
-
-    initializeSwipe();
+    // eslint-disable-next-line no-undef
+    new Swiper(swiperArea, {
+      simulateTouch: desktopNoTouchValue,
+      loop: true,
+      breakpoints: {
+        1023: SWIPER_DESKTOP,
+        767: SWIPE_TABLET,
+        0: SWIPER_MOBILE,
+      },
+    });
   }
 }());
 

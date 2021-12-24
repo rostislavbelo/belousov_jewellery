@@ -31,16 +31,22 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
-  color: #1D1613;
+  color: #1d1613;
   text-align: center;
 }
 
-.goods-card__link:hover p,
+.goods-card__link:hover p {
+  color: rgb(168, 123, 98);
+}
+
 .goods-card__link:hover h4 {
   color: rgb(168, 123, 98);
 }
 
-.goods-card__link:active p,
+.goods-card__link:active p {
+  color: rgba(168, 123, 98, 0.7);
+}
+
 .goods-card__link:active h4 {
   color: rgba(168, 123, 98, 0.7);
 }
@@ -53,7 +59,7 @@
   font-size: 14px;
   line-height: 130%;
   text-align: center;
-  color: #1D1613;
+  color: #1d1613;
 }
 
 .goods-card__img-content picture,
@@ -74,7 +80,6 @@
 }
 
 @media (max-width: $desktop-width) {
-
   .goods-card__list {
     width: 100%;
     display: flex;
@@ -104,7 +109,6 @@
 }
 
 @media (max-width: $tablet-width) {
-
   .goods-card__list {
     width: unset;
     display: flex;
@@ -118,6 +122,7 @@
   .goods-card__img-content {
     width: 130px;
     height: 136px;
+    margin: 0 0 16px;
 
     @media (min-width: 320px) and (max-width: 768px) {
       width: calc(1vw * 130 / (320 / 100));

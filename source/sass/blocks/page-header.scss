@@ -47,11 +47,6 @@
   &:active::placeholder {
     opacity: 0.7;
   }
-
-  &:active::placeholder {
-    opacity: 0.7;
-  }
-
 }
 
 .page-header__button-search {
@@ -91,8 +86,16 @@
   margin: 0 0 14px 0;
 }
 
+.page-header__logo-link:hover {
+  opacity: 0.7;
+}
+
 .page-header__logo-link--main-page {
   cursor: unset;
+
+  &:hover {
+    opacity: unset;
+  }
 }
 
 .page-header__logo-link svg {
@@ -199,8 +202,8 @@
   }
 
   .page-header__form {
-    padding: 0 0 0 0;
-    margin: 0;
+    padding: 10px 0 0 0;
+    margin: 0 0 47px 0;
     position: relative;
     grid-area: search;
     width: 100%;
@@ -232,10 +235,6 @@
       background: rgba(255, 255, 255, 0.3);
     }
 
-    &:active::placeholder {
-      opacity: unset;
-    }
-
     &:active {
       outline: unset;
     }
@@ -247,8 +246,8 @@
 
   .page-header__button-search svg {
     position: absolute;
-    top: 3px;
-    left: 4px;
+    top: 14px;
+    left: 9px;
     fill: #ffffff;
 
     &:hover {
@@ -275,7 +274,7 @@
     display: flex;
     justify-content: center;
     grid-area: logo;
-    margin: 0 0 37px 0;
+    margin: 0 0 25px 0;
   }
 
   .page-header__login-wrapper {
@@ -284,7 +283,7 @@
   }
 
   .page-header__cart-wrapper {
-    padding: 17px 0 0 0;
+    padding: 25px 0 0 0;
     grid-area: cart;
     display: flex;
     justify-content: flex-end;
@@ -301,6 +300,7 @@
     font-size: 18px;
     line-height: 130%;
     color: #ffffff;
+    height: min-content;
   }
 
   .page-header__login-link {
@@ -323,8 +323,8 @@
   .page-header__cart-link svg {
     display: block;
     stroke: #ffffff;
-    width: 18px;
-    height: 16px;
+    width: 20px;
+    height: 18px;
 
     &:hover {
       opacity: 0.5;
@@ -349,8 +349,12 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 0 0 0 0;
+    margin: 0 0 27px 0;
     padding: 0 0 0 0;
+  }
+
+  .page-header__about-company-item {
+    margin: 0 0 20px 0;
   }
 
   .page-header__about-company-link {
@@ -385,7 +389,7 @@
   .page-header {
     width: 100%;
     margin: 0 auto;
-    padding: 30px 15px 0 15px;
+    padding: 20px 15px 0 15px;
     box-sizing: border-box;
     background: #a87b62;
   }
@@ -405,8 +409,8 @@
   }
 
   .page-header__form {
-    padding: 0 0 0 0;
-    margin: 0;
+    padding: 10px 0 0 0;
+    margin: 0 0 35px 0;
     position: relative;
     grid-area: search;
     width: 100%;
@@ -458,11 +462,11 @@
     display: flex;
     justify-content: center;
     grid-area: logo;
-    margin: 0 0 37px 0;
+    margin: 0 0 16px 0;
   }
 
   .page-header__login-wrapper {
-    padding: 17px 0 0 0;
+    padding: 14px 0 0;
     grid-area: login;
   }
 

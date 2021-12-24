@@ -10,6 +10,7 @@
 
 .swiper-pagination {
   margin: 0 -13px 0 0;
+  text-align: center;
 }
 
 .swiper-pagination-bullet {
@@ -18,7 +19,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
-  color: #9B9997;
+  color: #9b9997;
   cursor: pointer;
 
   &:hover {
@@ -28,7 +29,6 @@
   &:focus {
     color: rgba(29, 22, 19, 1);
   }
-
 }
 
 /*   @media (max-width: 768px) {
@@ -52,10 +52,29 @@
   .swiper {
     width: 87.8vw;
   }
+
+  .swiper-pagination {
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #9b9997;
+  }
 }
 
 @media (max-width: $tablet-width) {
   .swiper {
     width: 91vw;
+  }
+
+  .swiper-pagination {
+    margin: 0 0 0 0;
+    text-align: center;
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #1d1613;
+    word-spacing: 0.3em;
   }
 }

@@ -17,7 +17,7 @@
   line-height: 130%;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #1D1613;
+  color: #1d1613;
   max-width: 85%;
   padding: 0;
   margin: 0 auto 49px;
@@ -46,12 +46,11 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 130%;
-  color: #1D1613;
-  padding: 0;
+  color: #1d1613;
   margin: 0;
   position: relative;
   box-sizing: border-box;
-  padding: 43px 40px 0px 42px;
+  padding: 43px 40px 0 42px;
   //margin: 0 0 50px 0;
 
   &::before {
@@ -81,7 +80,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 130%;
-  color: #1D1613;
+  color: #1d1613;
   max-width: 53%;
   padding: 7px 0 42px 50px;
   display: block;
@@ -92,14 +91,14 @@
 @media (max-width: $desktop-width) {
   .questions {
     padding: 0;
-    margin: 0 0 100px 0;
+    margin: 0 0 67px 0;
     width: 100%;
   }
 
   .questions__wrapper {
-    max-width: 930px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 45px;
   }
 
   .questions__wrapper h2 {
@@ -109,7 +108,7 @@
     line-height: 130%;
     text-align: center;
     letter-spacing: 0.03em;
-    color: #1D1613;
+    color: #1d1613;
   }
 
   .questions__list {
@@ -135,23 +134,22 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;
-    color: #1D1613;
-    padding: 0;
+    color: #1d1613;
     margin: 0;
     position: relative;
     box-sizing: border-box;
-    padding: 50px 40px 10px 50px;
+    padding: 43px 40px 10px 50px;
     //margin: 0 0 50px 0;
 
     &::before {
       @include pseudo;
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       border-left: 1px solid #a87b62;
       border-bottom: 1px solid #a87b62;
       transform: rotate(135deg);
-      top: 56px;
-      right: 50px;
+      top: 52px;
+      right: 52px;
       box-sizing: border-box;
     }
 
@@ -168,27 +166,25 @@
   .questions__item span {
     font-family: $sans-serif;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 140%;
-    color: #1D1613;
-    max-width: 55%;
-    padding: 10px 0 50px 50px;
+    font-size: 16px;
+    line-height: 130%;
+    color: #1d1613;
+    max-width: 80%;
+    padding: 16px 0 44px 50px;
     display: block;
     margin: 0 0 0 0;
   }
 }
 
-
-
 @media (max-width: $tablet-width) {
   .questions {
     padding: 0;
-    margin: 0 0 100px 0;
+    margin: 0 0 49px 0;
     width: 100%;
   }
 
   .questions__wrapper {
-    max-width: 100%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 15px;
   }
@@ -200,7 +196,8 @@
     line-height: 130%;
     text-align: center;
     letter-spacing: 0.03em;
-    color: #1D1613;
+    color: #1d1613;
+    margin-bottom: 29px;
   }
 
   .questions__list {
@@ -226,23 +223,22 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
-    color: #1D1613;
-    padding: 0;
+    color: #1d1613;
     margin: 0;
     position: relative;
     box-sizing: border-box;
-    padding: 50px 25px 10px 25px;
-    max-width: 85%;
+    padding: 16px 25px 9px;
+    max-width: 90%;
 
     &::before {
       @include pseudo;
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       border-left: 1px solid #a87b62;
       border-bottom: 1px solid #a87b62;
       transform: rotate(135deg);
-      top: 56px;
-      right: 50px;
+      top: 26px;
+      right: -2px;
       box-sizing: border-box;
     }
 
@@ -257,14 +253,13 @@
   }
 
   .questions__item span {
-    max-width: 85%;
     font-family: $sans-serif;
     font-weight: normal;
     font-size: 14px;
     line-height: 140%;
-    color: #1D1613;
-    max-width: 85%;
-    padding: 10px 25px 50px 25px;
+    color: #1d1613;
+    max-width: 71%;
+    padding: 4px 25px 20px 25px;
     display: block;
     margin: 0 0 0 0;
   }

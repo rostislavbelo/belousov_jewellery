@@ -1,3 +1,16 @@
+.js__body--no-scroll {
+  position: fixed;
+  overflow-y: scroll;
+}
+
+.js__popup-login--show {
+  display: flex;
+}
+
+.js__block-hidden--active {
+  display: none
+}
+
 .js__questions--hidden span {
   display: none;
 }
@@ -28,6 +41,10 @@
 }
 
 @media (max-width: $desktop-width) {
+  .js__questions--hidden p::before {
+    transform: rotate(-45deg);
+    top: 41px;
+  }
 
   .js__styles-swiper-list--no-js {
     overflow-x: scroll;
@@ -35,6 +52,7 @@
 
   .js__styles-swiper-item--no-js {
     margin-right: 30px;
+    margin-bottom: 20px;
   }
 
   .js__swiper-button--no-js {
@@ -43,6 +61,11 @@
 
   .js__menu--hidden {
     display: none;
+  }
+
+  .js__styles-height--active {
+    min-height: 100vh;
+    max-height: max-content;
   }
 
   .js__menu-color--change {
@@ -59,7 +82,7 @@
 
   .js__button-color--change::before {
     background: #1d1613;
-    box-shadow: 0 6px 0 0 #1d1613, 0 -6px 0 0 #1d1613;
+    box-shadow: 0 8px 0 0 #1d1613, 0 -8px 0 0 #1d1613;
   }
 
   .js__menu-button--show {
@@ -68,6 +91,15 @@
 }
 
 @media (max-width: $tablet-width) {
+  .js__questions--hidden p::before {
+    transform: rotate(-45deg);
+    top: 17px;
+  }
+
+  .js__questions--hidden p {
+    padding-bottom: 21px;
+  }
+
   .js__styles-swiper-list--no-js {
     overflow-x: scroll;
     width: 100%;
