@@ -195,4 +195,27 @@
   .js__styles-swiper-item--no-js {
     margin-right: 30px;
   }
+
+  .js__filter--popup {
+    background: #ffffff;
+    position: relative;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+  }
+
+  .js__form-button-closed--active {
+    border: none;
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: -11px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1d1613;
+    cursor: pointer;
+    z-index: 50;
+  }
 }

@@ -24,10 +24,23 @@
     flex-direction: column;
     align-items: center;
     column-gap: unset;
+  }
+}
 
+@media (max-width: $tablet-width) {
+  .goods {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 66px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: unset;
 
-    /*     @media (min-width: 1023px) and (max-width: 1250px) {
-      column-gap: calc(1vw * 20 / (1250 / 100));
-    } */
+    @media (min-width: 340px) and (max-width: 768px) {
+      padding: 0 calc(1vw * 20 / (320 / 100));
+    }
   }
 }

@@ -100,22 +100,22 @@
 
 @media (max-width: $tablet-width) {
   .catalog-promo {
-    margin: 0 0 120px 0;
+    margin: 0 0 40px 0;
     padding: 0;
     width: 100%;
   }
 
   .catalog-promo__wrapper {
     width: 100%;
-    background: #a87b62 url("/img/catalog/background-top-desktop.jpg") no-repeat;
+    background: #a87b62 url("/img/catalog/mobile/background-top-mobile.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 261px;
-    padding: 102px 0 50px 0;
+    padding: 78px 0 50px 0;
     box-sizing: border-box;
 
     @media (min-resolution: 2dppx) {
-      background: #a87b62 url("/img/catalog/background-top-desktop@2x.jpg") no-repeat;
+      background: #a87b62 url("/img/catalog/mobile/background-top-mobile@2x.jpg") no-repeat;
       background-size: cover;
       background-position: center;
     }
@@ -123,9 +123,9 @@
 
   .catalog-promo__wrapper p {
     text-transform: uppercase;
-    max-width: 75%;
+    max-width: 90%;
     padding: 0;
-    margin: 0 auto -6px;
+    margin: 0 auto 3px;
     text-align: center;
     font-family: $serif;
     font-weight: bold;
@@ -135,7 +135,7 @@
   }
 
   .catalog-promo__wrapper span {
-    max-width: 75%;
+    max-width: 90%;
     padding: 0;
     margin: 0 auto;
     display: block;
