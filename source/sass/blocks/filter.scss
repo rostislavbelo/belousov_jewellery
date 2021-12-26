@@ -1,6 +1,12 @@
 .filter {
   padding: 0;
   margin: 0;
+  display: block;
+  width: 100%;
+}
+
+.filter__form {
+  position: relative;
 }
 
 .filter__filteres-area {
@@ -9,29 +15,51 @@
   margin: 0 0 35px 0;
 }
 
-.filter__form {
-  width: 100%;
-
+.filter__category {
+  // padding: 23px 0 0 24px;
 }
 
-.filter__category {
+.filter__category:not(:last-child) {
   border-bottom: 1px solid #a87b62;
 }
 
 .filter__category h3 {
-  padding: 0;
+  padding: 23px 40px 22px 24px;
   margin: 0;
   font-family: $sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
-  color: #1D1613;
+  color: #1d1613;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    width: 11px;
+    height: 11px;
+    border-left: 1px solid #a87b62;
+    border-bottom: 1px solid #a87b62;
+    transform: rotate(135deg);
+    top: 31px;
+    right: 24px;
+    box-sizing: border-box;
+  }
+
+  &:hover {
+    color: #a87b62;
+  }
+
+  &:hover::before {
+    border-left: 2px solid #a87b62;
+    border-bottom: 2px solid #a87b62;
+  }
 }
 
 .filter__category-list {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 23px 5px;
 }
 
 .filter__button-send,
@@ -43,14 +71,14 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
-  color: #1D1613;
-  border: 1px solid #A87B62;
-  background: #e5e5e5;
+  color: #1d1613;
+  border: 1px solid #a87b62;
+  background: #ffffff;
   box-sizing: border-box;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.6;
   }
 }
 
@@ -60,6 +88,391 @@
   margin: 0 0 25px 0;
 }
 
-.filter__button-closed {
+.filter__button-open,
+.filter__button-closed{
   display: none;
+}
+
+.filter__price-values {
+  width: min-content;
+  display: flex;
+}
+
+.filter__price-min-value,
+.filter__price-max-value {
+  width: min-content;
+}
+
+.filter__price-min-value input,
+.filter__price-max-value input {
+  display: block;
+  border: none;
+  width: 40px;
+  font-family: $sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #1d1613;
+  cursor: pointer;
+  margin: 5px 0 8px 6px;
+
+  &:hover {
+    color: #a87b62;
+  }
+}
+
+
+.filter__control-min,
+.filter__control-max {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #a87b62;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.filter__category:not(:last-child) input {
+  @include hidden;
+  cursor: pointer;
+}
+
+.filters__input-custom {
+  // position: relative;
+}
+
+.filters__input-custom label {
+  font-family: $sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1d1613;
+  margin: 0 30px 10px 24px;
+  padding: 0 0 0 30px;
+  display: block;
+  width: max-content;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    color: #a87b62;
+  }
+}
+
+.filters__input-custom label::before {
+  @include pseudo;
+  width: 15.95px;
+  height: 15px;
+  border: 1px solid #a87b62;
+  box-sizing: border-box;
+  top: 2px;
+  left: 4px;
+}
+
+.filters__input-custom label::after {
+  @include pseudo;
+  width: 15.95px;
+  height: 15px;
+  box-sizing: border-box;
+  background: #a87b62;
+  top: 2px;
+  left: 4px;
+  display: none;
+}
+
+.filters__input-custom input:checked+label::after {
+  display: block;
+}
+
+.filter__scale {
+  width: 100%;
+  position: relative;
+  padding: 6px 0 0 0;
+}
+
+.filter__main-scale {
+  width: 80%;
+  margin: 0 auto;
+  height: 1px;
+  background: #f0eae4;
+}
+
+.filter__ranges {
+  width: 37%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 0 11px;
+}
+
+.filter__range-scale {
+  width: 100%;
+  height: 1px;
+  background: #a87b62;
+  margin: 0 auto;
+  position: relative;
+  top: -1px;
+}
+
+.filter__price-max-value {
+  position: absolute;
+  top: -8px;
+  right: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter__price-min-value {
+  position: relative;
+  top: -8px;
+  left: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: $desktop-width) {
+  .filter {
+    // width: 100%;
+    padding: 0;
+    margin: 0 0 50px 0;
+    display: block;
+  }
+
+  .filter__filteres-area {
+    border: none;
+    box-sizing: border-box;
+    margin: 0 0 41px 0;
+    border-bottom: 1px solid #a87b62;
+    padding: 0 0 17px 0;
+  }
+
+  .filter__form {
+    width: clamp(350px, 442px, 100%);
+    box-shadow: 0px 5px 32px rgba(219, 213, 208, 0.24);
+    padding: 0 0 15px 0;
+    box-sizing: border-box;
+  }
+
+  .filter__category {
+    // padding: 23px 0 0 24px;
+  }
+
+  .filter__category:not(:last-child) {
+    border-bottom: 1px solid #a87b62;
+  }
+
+  .filter__category h3 {
+    padding: 34px 40px 34px 42px;
+    margin: 0;
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #1d1613;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      width: 11px;
+      height: 11px;
+      border-left: 1px solid #a87b62;
+      border-bottom: 1px solid #a87b62;
+      transform: rotate(135deg);
+      top: 31px;
+      right: 24px;
+      box-sizing: border-box;
+    }
+
+    &:hover {
+      color: #a87b62;
+    }
+
+    &:hover::before {
+      border-left: 2px solid #a87b62;
+      border-bottom: 2px solid #a87b62;
+    }
+  }
+
+  .filter__category-list {
+    list-style-type: none;
+    padding: 0;
+    margin: -12px 0 35px 5px;
+  }
+
+  .filter__button-send,
+  .filter__button-clear {
+    margin: 0 auto 25px;
+    display: block;
+    width: 82%;
+    height: 68px;
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #1d1613;
+    border: 1px solid #a87b62;
+    background: #ffffff;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .filter__button-send {
+    background: #a87a61;
+    color: #ffffff;
+  }
+
+  .filter__button-open-closed {
+    display: none;
+  }
+
+  .filter__price-values {
+    width: min-content;
+    display: flex;
+  }
+
+  .filter__price-min-value,
+  .filter__price-max-value {
+    width: min-content;
+  }
+
+  .filter__price-min-value input,
+  .filter__price-max-value input {
+    display: block;
+    border: none;
+    width: 40px;
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #1d1613;
+    cursor: pointer;
+    margin: 5px 0 8px 6px;
+
+    &:hover {
+      color: #a87b62;
+    }
+  }
+
+
+  .filter__control-min,
+  .filter__control-max {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #a87b62;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  .filter__category:not(:last-child) input {
+    @include hidden;
+    cursor: pointer;
+  }
+
+  .filters__input-custom {
+    // position: relative;
+  }
+
+  .filters__input-custom label {
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1d1613;
+    margin: 0 30px 14px 45px;
+    padding: 0 0 0 30px;
+    display: block;
+    width: max-content;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      color: #a87b62;
+    }
+  }
+
+  .filters__input-custom label::before {
+    @include pseudo;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #a87b62;
+    box-sizing: border-box;
+    top: 2px;
+    left: 1px;
+  }
+
+  .filters__input-custom label::after {
+    @include pseudo;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    background: #a87b62;
+    top: 2px;
+    left: 1px;
+    display: none;
+  }
+
+  .filters__input-custom input:checked+label::after {
+    display: block;
+  }
+
+  .filter__scale {
+    width: 100%;
+    position: relative;
+    padding: 0 0 0 0;
+    margin: -1px 0 0 0;
+  }
+
+  .filter__main-scale {
+    width: 76%;
+    margin: 0 50px 0 53px;
+    height: 1px;
+    background: #f0eae4;
+  }
+
+  .filter__ranges {
+    width: 40%;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 10px 0 0;
+  }
+
+  .filter__range-scale {
+    width: 100%;
+    height: 1px;
+    background: #a87b62;
+    margin: 0 auto;
+    position: relative;
+    top: -1px;
+  }
+
+  .filter__price-max-value {
+    position: absolute;
+    top: -10px;
+    right: -25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter__price-min-value {
+    position: relative;
+    left: -32px;
+    top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

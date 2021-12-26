@@ -31,7 +31,7 @@
 
 .page-footer__information-columns-area {
   display: grid;
-  grid-template-columns: 34% 32% 1fr;
+  grid-template-columns: 34% 32% 25%;
   grid-template-rows: 1fr;
   row-gap: 30px;
   column-gap: 20px;
@@ -43,7 +43,7 @@
   @media (min-width: 1023px) and (max-width: 1200px) {
     column-gap: calc(1vw * 20 / (1200 / 100));
     padding-left: calc(1vw * 66 / (1200 / 100));
-    grid-template-columns: 34% 27% 1fr;
+    grid-template-columns: 34% 27% 25%;
   }
 }
 

@@ -52,13 +52,41 @@
   }
 }());
 
+//Управление аккордеоном секции Questions.
+(function () {
+
+  const questionsRest = document.querySelectorAll('.js__questions:not(:first-child)');
+  const questionsAll = document.querySelectorAll('.js__questions');
+
+  if (questionsRest && questionsAll) {
+
+    questionsRest.forEach((question) => {
+      question.classList.add('js__questions--hidden');
+    });
+
+    questionsAll.forEach((question) => {
+      const answer = question.querySelector('p');
+      answer.addEventListener('click', () => {
+        question.classList.toggle('js__questions--hidden');
+      });
+
+      answer.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          question.classList.toggle('js__questions--hidden');
+        }
+      });
+    });
+  }
+
+}());
+
 //Управление попапом
 (function () {
   const loginButtonStart = document.querySelector('.js__login');
   const popupLogin = document.querySelector('.js__popup-login');
   const buttonClosed = document.querySelector('.js__popup-closed');
   const loginSended = document.querySelector('.js__send-form');
-  const body = document.querySelector('.js__body');
+  const body = document.querySelector('.page-body');
   const inputActive = document.querySelector('.login-form__input-login input');
 
   if (loginButtonStart && popupLogin) {
@@ -105,12 +133,11 @@
 
 //Управление слайдером-свайпером.
 (function () {
-
   const styleSwiperList = document.querySelector('.js__styles-swiper-list--no-js');
   const styleSwiperItem = document.querySelectorAll('.js__styles-swiper-item--no-js');
   const styleSwiperButton = document.querySelectorAll('.js__styles-swiper-button--no-js');
 
-  if (styleSwiperList, styleSwiperItem, styleSwiperButton) {
+  if (styleSwiperList && styleSwiperItem && styleSwiperButton) {
     styleSwiperList.classList.remove('js__styles-swiper-list--no-js');
 
     styleSwiperItem.forEach((element) => {
@@ -179,6 +206,7 @@
     const DESKTOP_WIDTH = 1023;
     const desktopNoTouchValue = window.screen.width <= DESKTOP_WIDTH;
 
+    //Ниже строка не проверяется линтером - это вызов библиотеки слвйдера-свайпера
     // eslint-disable-next-line no-undef
     new Swiper(swiperArea, {
       simulateTouch: desktopNoTouchValue,
@@ -192,45 +220,109 @@
   }
 }());
 
-//Управление аккордеоном секции Questions.
+//Управление аккордеоном секции Filters.
 (function () {
 
-  const questionsRest = document.querySelectorAll('.js__questions:not(:first-child)');
-  const questionsAll = document.querySelectorAll('.js__questions');
+  const filtersRest = document.querySelectorAll('.js__filters--start-hidden');
+  const filtersAll = document.querySelectorAll('.js__filters');
 
-  if (questionsRest && questionsAll) {
+  if (filtersRest && filtersAll) {
 
-    questionsRest.forEach((question) => {
-      question.classList.add('js__questions--hidden');
+    filtersRest.forEach((filter) => {
+      filter.classList.add('js__filters--hidden');
     });
 
-
-    questionsAll.forEach((question) => {
-      const answer = question.querySelector('p');
+    filtersAll.forEach((filter) => {
+      const answer = filter.querySelector('h3');
       answer.addEventListener('click', () => {
-        question.classList.toggle('js__questions--hidden');
+        filter.classList.toggle('js__filters--hidden');
+      });
+
+      answer.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          filter.classList.toggle('js__filters--hidden');
+        }
+      });
+    });
+  }
+
+}());
+
+//Переключение чекбоксов секции Filters с помощью клавиши Enter при управлении с клавиатуры.
+(function () {
+  const areaInputs = document.querySelectorAll('.filters__input-custom');
+
+  if (areaInputs) {
+    areaInputs.forEach((area) => {
+      area.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Enter') {
+          const ttt = area.querySelector('input');
+          ttt.toggleAttribute('checked');
+        }
+      });
+    });
+  }
+}());
+
+
+//Управление попапом фильтра страницы catalog.html
+(function () {
+  const filter = document.querySelector('.js__filter');
+  const buttonOpen = document.querySelector('.js__form-button-open');
+  const buttonClosed = document.querySelector('.js__form-button-closed');
+  const blockHiddenFilter = document.querySelectorAll('.js__block-hidden-filter');
+  const body = document.querySelector('.page-body');
+  const backgroundPopup = document.querySelector('.js__filter-background');
+
+  if (buttonOpen && filter && buttonClosed && blockHiddenFilter && body && backgroundPopup) {
+    filter.classList.add('js__filter--hidden');
+    buttonOpen.classList.add('js__form-button-open--active');
+
+    buttonOpen.addEventListener('click', () => {
+      filter.classList.remove('js__filter--hidden');
+      filter.classList.add('js__filter--popup');
+      buttonOpen.classList.remove('js__form-button-open--active');
+      buttonClosed.classList.add('js__form-button-closed--active');
+      body.classList.add('js__body--no-scroll');
+      backgroundPopup.classList.add('js__filter-background--popup');
+
+      blockHiddenFilter.forEach((block) => {
+        block.classList.add('js__block-hidden--active');
       });
     });
 
-    /*     questionsAll.forEach((question) => {
+    const deactivePopupFilter = () => {
+      filter.classList.add('js__filter--hidden');
+      filter.classList.remove('js__filter--popup');
+      buttonOpen.classList.add('js__form-button-open--active');
+      buttonClosed.classList.remove('js__form-button-closed--active');
+      body.classList.remove('js__body--no-scroll');
+      backgroundPopup.classList.remove('js__filter-background--popup');
 
-          questionTitles.forEach((title) => {
-            title.addEventListener('click', () => {
+      blockHiddenFilter.forEach((block) => {
+        block.classList.remove('js__block-hidden--active');
+      });
+    };
 
-              question.classList.toggle('js__questions--hidden');
-            })
-          })
-        })
+    buttonClosed.addEventListener('click', () => {
+      deactivePopupFilter();
+    });
 
-     */
+    filter.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      deactivePopupFilter();
+    });
 
-    /*     questionTitles.forEach((title) => {
-          title.addEventListener('click', () => {
-            questionsAll.forEach((question) => {
-              question.classList.toggle('js__questions--hidden');
-            })
-          })
-        }) */
+    document.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Escape') {
+        deactivePopupFilter();
+      }
+    });
+
+    document.addEventListener('click', (evt) => {
+      if (evt.target === backgroundPopup) {
+        deactivePopupFilter();
+      }
+    });
   }
-
 }());

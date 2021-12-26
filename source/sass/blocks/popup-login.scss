@@ -3,7 +3,7 @@
   height: 100%;
   position: fixed;
   z-index: 33;
-  background: #e5e5e5;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   display: none;
@@ -16,9 +16,9 @@
 }
 
 .popup-login__form {
-  position: fixed;
-  margin: auto;
-  overflow-y: scroll;
+  position: relative;
+  margin: 0 auto 50px;
+  overflow: auto;
 }
 
 .popup-login__button-closed {

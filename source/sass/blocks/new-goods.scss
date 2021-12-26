@@ -8,7 +8,7 @@
   max-width: 1170px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0 4px;
+  padding: 0 7px;
 
   @media (min-width: 1023px) and (max-width: 1250px) {
     max-width: calc(1vw * 1170 / (1250 / 100));
@@ -133,33 +133,39 @@
 .new-goods__button-slider-ahead,
 .new-goods__button-slider-back {
   padding: 0;
-  width: 69px;
-  height: 32px;
+  width: 30px;
+  height: 10px;
   position: absolute;
-  top: -115px;
-  left: -40px;
+  top: -105px;
+  left: -1px;
   border: none;
   background: transparent url("/img/icons/arrow-slider.svg") no-repeat;
   cursor: pointer;
-  background-position: left;
+  background-position: right;
   transform: rotate(180deg);
-  background-size: 30px 10px;
+  background-size: 100%;
+ // outline: none;
 }
 
 .new-goods__button-slider-ahead {
   position: absolute;
   right: -1px;
   left: unset;
-  background-size: 32px 10px;
+  background-size: 100%;
   transform: rotate(0);
   background-position: right;
-  top: -115px;
 }
 
 .new-goods__button-slider-ahead:hover,
 .new-goods__button-slider-back:hover {
   opacity: 0.5;
 }
+
+.new-goods__button-slider-ahead:focus,
+.new-goods__button-slider-back:focus {
+  opacity: 0.5;
+}
+
 
 @media (max-width: $desktop-width) {
   .new-goods {

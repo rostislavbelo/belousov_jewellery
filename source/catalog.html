@@ -9,11 +9,7 @@
   <title>HTML Academy:Jewelry</title>
   <link rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/poppins-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-600.woff2" as="font" type="font/woff2"
-    crossorigin="anonymous">
   <link rel="preload" href="fonts/cormorant-garamond-v10-latin-700.woff2" as="font" type="font/woff2"
-    crossorigin="anonymous">
-  <link rel="preload" href="fonts/cormorant-garamond-v10-latin-italic.woff2" as="font" type="font/woff2"
     crossorigin="anonymous">
   <link rel="preload" href="fonts/cormorant-garamond-v10-latin-500italic.woff2" as="font" type="font/woff2"
     crossorigin="anonymous">
@@ -21,7 +17,8 @@
 </head>
 
 <body class="page-body js">
-  <header class="page-header js__menu-color js__styles-height">
+  <!--  Классы js__menu и js__menu--hidden управляют появление скрытием элементов мобильного меню -->
+  <header class="page-header js__menu-color js__styles-height js__block-hidden-filter">
     <div class="page-header__wrapper">
       <form class="page-header__form js__menu" action="https://echo.htmlacademy.ru" method="post">
         <button class="page-header__button-search" type="submit" aria-label="Find what you need">
@@ -41,7 +38,7 @@
         </a>
       </div>
       <div class="page-header__login-wrapper js__menu">
-        <a class="page-header__login-link" href="login.html">Login</a>
+        <a class="page-header__login-link js__login" href="login.html">Login</a>
       </div>
       <div class="page-header__cart-wrapper">
         <a class="page-header__cart-link js__cart-color js__menu-item" href="#">
@@ -86,9 +83,8 @@
       </div>
     </div>
   </header>
-
   <main class="page-main js__block-hidden">
-    <section class="catalog-promo">
+    <section class="catalog-promo js__block-hidden-filter">
       <div class="catalog-promo__wrapper">
         <h1 class="visually-hidden">Choosing and buying jewelry</h1>
         <p>ALL JEWELLERY</p>
@@ -96,78 +92,86 @@
       </div>
     </section>
     <section class="goods">
-      <div class="goods__filter filter">
+      <h2 class="visually-hidden">Jewelry catalog</h2>
+      <div class="goods__filter filter js__filter-background">
         <h2 class="visually-hidden">Selection of jewelry by parameters</h2>
-        <button class="filter__button-closed" type="button" aria-label="Close filter form"></button>
-        <form class="filter__form" action="https://echo.htmlacademy.ru" method="post">
+        <button class="filter__button-open js__form-button-open" type="button"
+          aria-label="Open filter form">Filter</button>
+        <form class="filter__form js__filter" action="https://echo.htmlacademy.ru" method="post">
+          <button class="filter__button-closed js__form-button-closed" type="button"
+            aria-label="Close filter form"></button>
           <div class="filter__filteres-area">
-            <div class="filter__category filter__product">
-              <h3>Necklaces</h3>
-              <ul class="filter__category-list filters__product-list">
-                <li class="filters__product-1">
-                  <input type="checkbox" name="product-1" id="product-1" checked>
-                  <label for="product-1">Necklaces</label>
+            <div class="filter__category filter__product js__filters">
+              <h3 tabindex="0">Product</h3>
+              <ul class="filter__category-list filters__product-list js__filter-inputs">
+                <li class="filters__input-custom filters__product-1">
+                  <input type="checkbox" name="product-1" id="product-1" checked tabindex="-1">
+                  <label for="product-1" tabindex="0">Necklaces</label>
                 </li>
-                <li class="filters__product-2">
-                  <input type="checkbox" name="product-2" id="product-2" checked>
-                  <label for="product-2">Chokers</label>
+                <li class="filters__input-custom filters__product-2">
+                  <input type="checkbox" name="product-2" id="product-2" checked tabindex="-1">
+                  <label for="product-2" tabindex="0">Chokers</label>
                 </li>
-                <li class="filters__product-3">
-                  <input type="checkbox" name="product-3" id="product-3">
-                  <label for="product-3">Rings</label>
+                <li class="filters__input-custom filters__product-3">
+                  <input type="checkbox" name="product-3" id="product-3" tabindex="-1">
+                  <label for="product-3" tabindex="0">Rings</label>
                 </li>
-                <li class="filters__product-4">
-                  <input type="checkbox" name="product-4" id="product-4" checked>
-                  <label for="product-4">Earrings</label>
-                </li>
-              </ul>
-            </div>
-            <div class="filter__category filter__material">
-              <h3>Material</h3>
-              <ul class="filter__category-list filters__material-list">
-                <li class="filters__material-1">
-                  <input type="checkbox" name="material-1" id="material-1">
-                  <label for="material-1">Silver</label>
-                </li>
-                <li class="filters__material-2">
-                  <input type="checkbox" name="material-2" id="material-2" checked>
-                  <label for="material-2">Gold</label>
+                <li class="filters__input-custom filters__product-4">
+                  <input type="checkbox" name="product-4" id="product-4" checked tabindex="-1">
+                  <label for="product-4" tabindex="0">Earrings</label>
                 </li>
               </ul>
             </div>
-            <div class="filter__category filter__collection">
-              <h3>Collection</h3>
-              <ul class="filter__category-list filters__collection-list">
-                <li class="filters__collection-1">
-                  <input type="checkbox" name="collection-1" id="collection-1">
-                  <label for="collection-1">Dreams</label>
+            <div class="filter__category filter__material js__filters js__filters--start-hidden">
+              <h3 tabindex="0">Material</h3>
+              <ul class="filter__category-list filters__material-list js__filter-inputs">
+                <li class="filters__input-custom filters__material-1">
+                  <input type="checkbox" name="material-1" id="material-1" tabindex="-1">
+                  <label for="material-1" tabindex="0">Silver</label>
                 </li>
-                <li class="filters__collection-2">
-                  <input type="checkbox" name="collection-2" id="collection-2" checked>
-                  <label for="collection-2">Pink flamingo</label>
+                <li class="filters__input-custom filters__material-2">
+                  <input type="checkbox" name="material-2" id="material-2" tabindex="-1">
+                  <label for="material-2" tabindex="0">Gold</label>
                 </li>
               </ul>
             </div>
-            <div class="filter__category filter__price">
-              <h3>Price</h3>
-              <div class="filter__scales">
-                <div class="filter__main-scale"></div>
-                <div class="filter__range-scale"></div>
-              </div>
-              <div class="filter__price-values">
-                <div class="filter__price-min-value">
-                  <div class="filter__control-min"></div>
-                  <input type="text" name="min-price" id="min-price" value="55">
-                  <label class="visually-hidden" for="min-price" aria-label="Minimum price value">Minimum price
-                    value</label>
-                  <!-- <span>$ 55</span> -->
+            <div class="filter__category filter__collection js__filters js__filters--start-hidden">
+              <h3 tabindex="0">Collection</h3>
+              <ul class="filter__category-list filters__collection-list js__filter-inputs">
+                <li class="filters__input-custom filters__collection-1">
+                  <input type="checkbox" name="collection-1" id="collection-1" tabindex="-1">
+                  <label for="collection-1" tabindex="0">Dreams</label>
+                </li>
+                <li class="filters__input-custom filters__collection-2">
+                  <input type="checkbox" name="collection-2" id="collection-2" tabindex="-1">
+                  <label for="collection-2" tabindex="0">Pink flamingo</label>
+                </li>
+              </ul>
+            </div>
+            <div class="filter__category filter__price js__filters">
+              <h3 tabindex="0">Price</h3>
+              <div class="js__filter-inputs">
+                <div class="filter__scale">
+                  <div class="filter__main-scale"></div>
                 </div>
-                <div class="filter__price-max-value">
-                  <div class="filter__control-max"></div>
-                  <input type="text" name="max-price" id="max-price" value="155">
-                  <label class="visually-hidden" for="max-price" aria-label="Maximum price value">Maximum price
-                    value</label>
-                  <!-- <span>$ 155</span> -->
+                <div class="filter__ranges">
+                  <div class="filter__range-scale"></div>
+                  <div class="filter__price-values">
+                    <div class="filter__price-min-value">
+                      <div class="filter__control-min " tabindex="0"></div>
+                      <input type="text" name="min-price" id="min-price" value="$ 55" maxlength="4"
+                        title="Enter the minimum price from 1 to 1000 $">
+                      <label class="visually-hidden" for="min-price" aria-label="Minimum price value">Minimum price
+                        value</label>
+                    </div>
+                    <div class="filter__price-max-value">
+                      <div class="filter__control-max" tabindex="0"></div>
+                      <input type="text" name="max-price" id="max-price" value="$ 155" maxlength="4"
+                        title="Enter the maximum price from 1 to 1000 $">
+                      <label class="visually-hidden" for="max-price" aria-label="Maximum price value">Maximum price
+                        value</label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,11 +180,12 @@
           <button class="filter__button-clear" type="reset">Clear All</button>
         </form>
       </div>
-      <div class="goods__shopwindow shopwindow">
+      <div class="goods__shopwindow shopwindow js__block-hidden-filter">
+        <h3 class="visually-hidden">Jewelry on sale today</h3>
         <ul class="shopwindow__list goods-card__list">
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -199,9 +204,9 @@
               <p>$ 115</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -221,9 +226,9 @@
               <p>$ 55</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -242,9 +247,9 @@
               <p>$ 155</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -263,9 +268,9 @@
               <p>$ 105</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -284,9 +289,9 @@
               <p>$ 75</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -305,9 +310,9 @@
               <p>$ 135</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -327,9 +332,9 @@
               <p>$ 85</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -349,9 +354,9 @@
               <p>$ 145</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -370,9 +375,9 @@
               <p>$ 95</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -383,17 +388,18 @@
                   <!-- 1х: 270px; 2x: 540px -->
                   <source type="image/webp"
                     srcset="img/catalog/threader-necklace-closeup.webp 1x, img/catalog/threader-necklace-closeup@2x.webp 2x">
-                  <img src="img/catalog/threader-necklace-closeup.jpg" srcset="img/catalog/threader-necklace-closeup@2x.jpg 2x" width="270"
-                    height="272" alt="Silver threader necklace" loading="lazy">
+                  <img src="img/catalog/threader-necklace-closeup.jpg"
+                    srcset="img/catalog/threader-necklace-closeup@2x.jpg 2x" width="270" height="272"
+                    alt="Silver threader necklace" loading="lazy">
                 </picture>
               </div>
               <h4>Threader necklace</h4>
               <p>$ 115</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -404,17 +410,18 @@
                   <!-- 1х: 270px; 2x: 540px -->
                   <source type="image/webp"
                     srcset="img/catalog/origami-crane-necklace.webp 1x, img/catalog/origami-crane-necklace@2x.webp 2x">
-                  <img src="img/catalog/origami-crane-necklace.jpg" srcset="img/catalog/origami-crane-necklace@2x.jpg 2x" width="270"
-                    height="272" alt="Silver origami crane necklace" loading="lazy">
+                  <img src="img/catalog/origami-crane-necklace.jpg"
+                    srcset="img/catalog/origami-crane-necklace@2x.jpg 2x" width="270" height="272"
+                    alt="Silver origami crane necklace" loading="lazy">
                 </picture>
               </div>
               <h4>Origami crane necklace</h4>
               <p>$ 105</p>
             </a>
           </li>
-          <li class="new-goods__item goods-card__item">
+          <li class="goods-card__item">
             <a class="goods-card__link" href="#">
-              <div class="new-goods__img-content goods-card__img-content">
+              <div class="goods-card__img-content">
                 <picture>
                   <!-- 1х: 130px; 2x: 260px -->
                   <source type="image/webp" media="(max-width: 767px)"
@@ -435,10 +442,10 @@
           </li>
         </ul>
         <div class="shopwindow__pagination">
-          <a href="#"><span>Previous</span></a>
+          <a class="shopwindow__pagination-button shopwindow__pagination-button-back" href="#"><span>Previous</span></a>
           <ul class="shopwindow__pages-list">
             <li class="shopwindow__pages-item shopwindow__pages-item--active">
-              <a href="#" aria-label="Go to the catalog page"></a>
+              <a href="#" aria-label="Go to the catalog page" tabindex="-2"></a>
             </li>
             <li class="shopwindow__pages-item">
               <a href="#" aria-label="Go to the catalog page"></a>
@@ -453,14 +460,12 @@
               <a href="#" aria-label="Go to the catalog page"></a>
             </li>
           </ul>
-          <a href="#"><span>Next</span></a>
+          <a class="shopwindow__pagination-button shopwindow__pagination-button-ahead" href="#"><span>Next</span></a>
         </div>
       </div>
     </section>
-
   </main>
-
-  <footer class="page-footer js__block-hidden">
+  <footer class="page-footer js__block-hidden js__block-hidden-filter">
     <div class="page-footer__wrapper">
       <div class="page-footer__subscription">
         <h2 class="visually-hidden">Subscription to useful news</h2>
@@ -561,11 +566,29 @@
       </div>
     </div>
   </footer>
-  <div class="popup">
-    <form class="popup__form input" action="https://echo.htmlacademy.ru" method="post">
+  <div class="popup-login js__popup-login">
+    <form class="popup-login__form login-form js__send-form" action="https://echo.htmlacademy.ru" method="post">
+      <button class="popup-login__button-closed login-form__button-closed js__popup-closed" type="button"
+        aria-label="Close the login window"></button>
+      <p>Log In</p>
+      <div class="login-form__input login-form__input-login">
+        <input type="text" name="login" id="login" placeholder="Your E-mail" required minlength="5" maxlength="40"
+          title="Enter your email as login" autofocus>
+        <label class="visually-hidden" for="login">Login</label>
+      </div>
+      <div class="login-form__input login-form__input-password">
+        <input type="password" name="password" id="password" placeholder="Password" required minlength="6"
+          maxlength="40" title="Enter your password">
+        <label class="visually-hidden" for="password">password</label>
+        <a class="login-form__remember-password" href="#"><span>Forgot your password?</span></a>
+      </div>
+      <button class="login-form__button-login js__popup-button-login" type="submit">Log In</button>
+      <div class="login-form__no-account">
+        <span>Don’t have an account?</span>
+        <a class="login-form__no-account-link" href="#"><span>Sign up</span></a>
+      </div>
     </form>
   </div>
-  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
 
