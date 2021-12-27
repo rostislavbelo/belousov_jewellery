@@ -70,8 +70,8 @@
         question.classList.toggle('js__questions--hidden');
       });
 
-      answer.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
+      answer.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Enter') {
           question.classList.toggle('js__questions--hidden');
         }
       });
@@ -116,14 +116,14 @@
       hiddenPopup();
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+    document.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Escape') {
         hiddenPopup();
       }
     });
 
-    document.addEventListener('click', (e) => {
-      if (e.target === popupLogin) {
+    document.addEventListener('click', (evt) => {
+      if (evt.target === popupLogin) {
         hiddenPopup();
       }
     });
@@ -251,8 +251,8 @@
         filter.classList.toggle('js__filters--hidden');
       });
 
-      answer.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
+      answer.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Enter') {
           filter.classList.toggle('js__filters--hidden');
         }
       });
@@ -320,10 +320,12 @@
       deactivePopupFilter();
     });
 
-    filter.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      deactivePopupFilter();
-    });
+    if (screen.width <= 1023) {
+      filter.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        deactivePopupFilter();
+      });
+    }
 
     document.addEventListener('keydown', (evt) => {
       if (evt.key === 'Escape') {
