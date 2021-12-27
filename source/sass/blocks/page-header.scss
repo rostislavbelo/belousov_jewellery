@@ -177,7 +177,6 @@
   }
 }
 
-
 @media (max-width: $desktop-width) {
   .page-header {
     width: 100%;
@@ -192,7 +191,6 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 25% 50% 25%;
-    // column-gap: 35px;
     grid-template-areas:
       ". logo cart"
       "search search search"
@@ -400,7 +398,6 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 25% 50% 25%;
-    // column-gap: 35px;
     grid-template-areas:
       ". logo cart"
       "search search search"

@@ -206,16 +206,29 @@
     const DESKTOP_WIDTH = 1023;
     const desktopNoTouchValue = window.screen.width <= DESKTOP_WIDTH;
 
-    //Ниже строка не проверяется линтером - это вызов библиотеки слвйдера-свайпера
-    // eslint-disable-next-line no-undef
-    new Swiper(swiperArea, {
-      simulateTouch: desktopNoTouchValue,
-      loop: true,
-      breakpoints: {
-        1023: SWIPER_DESKTOP,
-        767: SWIPE_TABLET,
-        0: SWIPER_MOBILE,
-      },
+    const restartSwiper = (touch) => {
+      //Ниже строка не проверяется линтером - это вызов библиотеки слайдера-свайпера
+      // eslint-disable-next-line no-undef
+      new Swiper(swiperArea, {
+        simulateTouch: touch,
+        loop: true,
+        breakpoints: {
+          1023: SWIPER_DESKTOP,
+          767: SWIPE_TABLET,
+          0: SWIPER_MOBILE,
+        },
+      });
+    };
+
+    restartSwiper(desktopNoTouchValue);
+
+    window.addEventListener('resize', () => {
+      if (window.screen.width <= DESKTOP_WIDTH) {
+        setInterval(() => location.reload(), 1000);
+      }
+      if (window.screen.width > DESKTOP_WIDTH) {
+        setInterval(() => location.reload(), 1000);
+      }
     });
   }
 }());
@@ -263,7 +276,6 @@
     });
   }
 }());
-
 
 //Управление попапом фильтра страницы catalog.html
 (function () {
