@@ -64,7 +64,7 @@
 .page-header__button-search svg {
   position: absolute;
   top: 1px;
-  left: 0px;
+  left: 0;
   width: 14px;
   height: 14px;
   fill: #000000;
@@ -390,7 +390,7 @@
   .page-header {
     width: 100%;
     margin: 0 auto;
-    padding: 20px 15px 0 15px;
+    padding: 27px 15px 0 15px;
     box-sizing: border-box;
     background: #a87b62;
   }

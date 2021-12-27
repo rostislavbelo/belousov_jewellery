@@ -3843,24 +3843,24 @@
     const suffixes = prepareClasses(['initialized', params.direction, {
       'pointer-events': !support.touch,
     }, {
-        'free-mode': swiper.params.freeMode && params.freeMode.enabled,
-      }, {
-        'autoheight': params.autoHeight,
-      }, {
-        'rtl': rtl,
-      }, {
-        'grid': params.grid && params.grid.rows > 1,
-      }, {
-        'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column',
-      }, {
-        'android': device.android,
-      }, {
-        'ios': device.ios,
-      }, {
-        'css-mode': params.cssMode,
-      }, {
-        'centered': params.cssMode && params.centeredSlides,
-      }], params.containerModifierClass);
+      'free-mode': swiper.params.freeMode && params.freeMode.enabled,
+    }, {
+      'autoheight': params.autoHeight,
+    }, {
+      'rtl': rtl,
+    }, {
+      'grid': params.grid && params.grid.rows > 1,
+    }, {
+      'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column',
+    }, {
+      'android': device.android,
+    }, {
+      'ios': device.ios,
+    }, {
+      'css-mode': params.cssMode,
+    }, {
+      'centered': params.cssMode && params.centeredSlides,
+    }], params.containerModifierClass);
     classNames.push(...suffixes);
     $el.addClass([...classNames].join(' '));
     swiper.emitContainerClasses();

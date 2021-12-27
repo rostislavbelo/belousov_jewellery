@@ -6,7 +6,7 @@
 
 .main-promo__wrapper {
   width: 100%;
-  background: #a87b62 url("/img/main-background-desktop.jpg") no-repeat;
+  background: #a87b62 url("../img/main-background-desktop.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 463px;
@@ -14,7 +14,7 @@
   box-sizing: border-box;
 
   @media (min-resolution: 2dppx) {
-    background: #a87b62 url("/img/main-background-desktop@2x.jpg") no-repeat;
+    background: #a87b62 url("../img/main-background-desktop@2x.jpg") no-repeat;
     background-size: cover;
     background-position: center;
   }
@@ -57,7 +57,7 @@
 
   .main-promo__wrapper {
     width: 100%;
-    background: #a87b62 url("/img/tablet/main-background-tablet.jpg") no-repeat;
+    background: #a87b62 url("../img/tablet/main-background-tablet.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 463px;
@@ -65,7 +65,7 @@
     box-sizing: border-box;
 
     @media (min-resolution: 2dppx) {
-      background: #a87b62 url("/img/tablet/main-background-tablet@2x.jpg") no-repeat;
+      background: #a87b62 url("../img/tablet/main-background-tablet@2x.jpg") no-repeat;
       background-size: cover;
     }
   }
@@ -107,7 +107,7 @@
 
   .main-promo__wrapper {
     width: 100%;
-    background: #a87b62 url("/img/mobile/main-background-mobile.jpg") no-repeat;
+    background: #a87b62 url("../img/mobile/main-background-mobile.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 463px;
@@ -115,7 +115,7 @@
     box-sizing: border-box;
 
     @media (min-resolution: 2dppx) {
-      background: #a87b62 url("/img/mobile/main-background-mobile@2x.jpg") no-repeat;
+      background: #a87b62 url("../img/mobile/main-background-mobile@2x.jpg") no-repeat;
       background-size: cover;
     }
   }

@@ -40,6 +40,7 @@
   display: block;
   text-decoration: none;
   margin: 0 auto 60px;
+  min-width: 180px;
   max-width: 80%;
 }
 
@@ -136,10 +137,10 @@
   width: 30px;
   height: 10px;
   position: absolute;
-  bottom: 516px;
+  bottom: 90.5%;
   left: 6px;
   border: none;
-  background: transparent url("/img/icons/arrow-slider.svg") no-repeat;
+  background: transparent url("../img/icons/arrow-slider.svg") no-repeat;
   cursor: pointer;
   background-position: right;
   transform: rotate(180deg);
@@ -292,38 +293,43 @@
  */
 
   .new-goods__list {
-    margin: 0 0 41px;
+    margin: 0 0 5px;
   }
 
-  .new-goods__item-subposition h4 {
-    padding-left: 13px;
-  }
+  ////////////////----------------------
+  .new-goods__item:nth-child(3n-2) {
+    margin-right: 30px;
 
-  .new-goods__button-slider-ahead,
-  .new-goods__button-slider-back {
-    padding: 0;
-    width: 38px;
-    height: 14px;
-    position: absolute;
-    bottom: 587px;
-    left: 11px;
-    border: none;
-    background: transparent url("/img/icons/arrow-slider-tablet.svg") no-repeat;
-    cursor: pointer;
-    background-position: center;
-    transform: rotate(180deg);
-    background-size: 100%;
-  }
+    .new-goods__item-subposition h4 {
+      padding-left: 13px;
+    }
 
-  .new-goods__button-slider-ahead {
-    left: unset;
-    right: 11px;
-    transform: rotate(0);
-  }
+    .new-goods__button-slider-ahead,
+    .new-goods__button-slider-back {
+      padding: 0;
+      width: 38px;
+      height: 14px;
+      position: absolute;
+      bottom: 90.5%;
+      left: 11px;
+      border: none;
+      background: transparent url("../img/icons/arrow-slider-tablet.svg") no-repeat;
+      cursor: pointer;
+      background-position: center;
+      transform: rotate(180deg);
+      background-size: 100%;
+    }
 
-  .new-goods__button-slider-ahead:hover,
-  .new-goods__button-slider-back:hover {
-    opacity: 0.5;
+    .new-goods__button-slider-ahead {
+      left: unset;
+      right: 11px;
+      transform: rotate(0);
+    }
+
+    .new-goods__button-slider-ahead:hover,
+    .new-goods__button-slider-back:hover {
+      opacity: 0.5;
+    }
   }
 }
 
