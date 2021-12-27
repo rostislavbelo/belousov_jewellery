@@ -224,10 +224,10 @@
 
     window.addEventListener('resize', () => {
       if (window.screen.width <= DESKTOP_WIDTH) {
-        setInterval(() => location.reload(), 1000);
+        restartSwiper(true);
       }
       if (window.screen.width > DESKTOP_WIDTH) {
-        setInterval(() => location.reload(), 1000);
+        setInterval(() => location.reload(), 2000);
       }
     });
   }
@@ -269,8 +269,8 @@
     areaInputs.forEach((area) => {
       area.addEventListener('keydown', (evt) => {
         if (evt.key === 'Enter') {
-          const ttt = area.querySelector('input');
-          ttt.toggleAttribute('checked');
+          const enter = area.querySelector('input');
+          enter.toggleAttribute('checked');
         }
       });
     });

@@ -10,7 +10,7 @@
   const stylesMenu = document.querySelector('.js__styles-height');
   const itemMenu = document.querySelectorAll('.js__menu-item');
 
-  if (mobileMenuElements && colorMenu && cartColor && logoColor && buttonColor && blockHidden) {
+  if (mobileMenuElements && colorMenu && cartColor && logoColor && buttonColor && blockHidden && buttonMenu && stylesMenu && itemMenu) {
 
     const startJsMenu = () => {
       mobileMenuElements.forEach((element) => {
@@ -89,7 +89,7 @@
   const body = document.querySelector('.page-body');
   const inputActive = document.querySelector('.login-form__input-login input');
 
-  if (loginButtonStart && popupLogin) {
+  if (loginButtonStart && popupLogin && buttonClosed && loginSended && body && inputActive) {
 
     const showPopup = () => {
       popupLogin.classList.add('js__popup-login--show');
@@ -224,10 +224,10 @@
 
     window.addEventListener('resize', () => {
       if (window.screen.width <= DESKTOP_WIDTH) {
-        setInterval(() => location.reload(), 1000);
+        restartSwiper(true);
       }
       if (window.screen.width > DESKTOP_WIDTH) {
-        setInterval(() => location.reload(), 1000);
+        setInterval(() => location.reload(), 2000);
       }
     });
   }
@@ -269,8 +269,8 @@
     areaInputs.forEach((area) => {
       area.addEventListener('keydown', (evt) => {
         if (evt.key === 'Enter') {
-          const ttt = area.querySelector('input');
-          ttt.toggleAttribute('checked');
+          const enter = area.querySelector('input');
+          enter.toggleAttribute('checked');
         }
       });
     });

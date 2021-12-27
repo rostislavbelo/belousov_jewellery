@@ -50,6 +50,11 @@
 }
 
 @media (max-width: $desktop-width) {
+  .js__filters--hidden h3::before {
+    transform: rotate(-45deg);
+    top: 34px;
+  }
+
   .js__filter--hidden {
     display: none;
     width: 100%;
@@ -153,6 +158,11 @@
   .js__styles-height--active {
     min-height: 100vh;
     max-height: max-content;
+    padding: 20px 15px 0;
+  }
+
+  .js__styles-height--active .js__menu-button {
+    top: 33px;
   }
 
   .js__menu-color--change {
@@ -178,6 +188,11 @@
 }
 
 @media (max-width: $tablet-width) {
+  .js__filters--hidden h3::before {
+    transform: rotate(-45deg);
+    top: 25px;
+  }
+
   .js__questions--hidden p::before {
     transform: rotate(-45deg);
     top: 17px;
