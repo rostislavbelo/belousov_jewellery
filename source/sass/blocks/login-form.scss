@@ -18,8 +18,9 @@
   z-index: 55;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/login/background-desktop@2x.jpg") no-repeat;
+    background-image: url("../img/login/background-desktop@2x.jpg");
     background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
@@ -190,8 +191,9 @@
     z-index: 55;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/login/background-tablet@2x.jpg") no-repeat;
+      background-image: url("../img/login/background-tablet@2x.jpg");
       background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 
@@ -355,8 +357,9 @@
     z-index: 55;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("/img/login/background-mobile@2x.jpg") no-repeat;
+      background-image: url("../img/login/background-mobile@2x.jpg");
       background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 

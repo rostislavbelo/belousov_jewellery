@@ -14,8 +14,8 @@
   height: max-content;
   box-sizing: border-box;
 
-  @media (min-width: 1023px) and (max-width: 1250px) {
-    margin-left: calc(1vw * 25 / (1250 / 100));
+  @media (min-width: 1023px) and (max-width: 1310px) {
+    margin-left: calc(1vw * 20 / (1250 / 100));
   }
 }
 
