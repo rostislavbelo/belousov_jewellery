@@ -27,12 +27,12 @@
   height: max-content;
   display: block;
   text-decoration: none;
-  min-width: 180px;
+  width: max-content;
   max-width: 85%;
   margin: 0 auto 60px;
 }
 
-.blog__main-link p {
+.blog__main-link span {
   font-family: $sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -40,10 +40,9 @@
   text-align: center;
   color: #1d1613;
   border-bottom: 1px solid rgb(168, 123, 98);
-  max-width: max-content;
   padding: 0 0 4px 0;
   margin: 0 auto;
-
+  display: block;
 
   &:hover {
     color: #a87b62;

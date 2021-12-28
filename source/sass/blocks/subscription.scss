@@ -1,6 +1,6 @@
 .subscription {
   max-width: 970px;
-  margin: 0 auto 66px;
+  margin: 0 auto 60px;
 }
 
 .subscription p {
@@ -22,9 +22,10 @@
 }
 
 .subscription__link {
+  height: max-content;
   display: block;
   text-decoration: none;
-  text-align: center;
+  width: max-content;
   max-width: 85%;
   margin: 0 auto;
 }
@@ -37,7 +38,9 @@
   line-height: 130%;
   color: #1d1613;
   border-bottom: 1px solid #a87b62;
+  margin: 0 auto;
   padding: 0 0 4px 0;
+  display: block;
 
   &:hover {
     color: #a87b62;
@@ -52,19 +55,23 @@
 @media (max-width: $desktop-width) {
   .subscription {
     max-width: 100%;
-    margin: 0 auto 66px;
+    margin: 0 auto 60px;
     padding: 0 45px;
   }
 
   .subscription p {
     margin-bottom: 16px;
   }
+
+  .subscription__link span {
+    padding: 0 0 5px 0;
+  }
 }
 
 @media (max-width: $tablet-width) {
   .subscription {
     max-width: 100%;
-    margin: 0 auto 52px;
+    margin: 0 auto 45px;
   }
 
   .subscription p {

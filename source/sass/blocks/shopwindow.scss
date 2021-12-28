@@ -32,7 +32,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  counter-reset: flag;
   box-sizing: border-box;
   padding: 0 18px 0 0;
 }
@@ -63,16 +62,11 @@
   text-decoration: none;
   padding: 0;
   margin: 0;
-
-  &::after {
-    font-family: $sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 130%;
-    color: #9b9997;
-    content: ""counter(flag);
-    counter-increment: flag;
-  }
+  font-family: $sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #9b9997;
 
   &:hover {
     opacity: 0.6;
@@ -157,16 +151,11 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
-
-    &::after {
-      font-family: $sans-serif;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 130%;
-      color: #9b9997;
-      content: ""counter(flag);
-      counter-increment: flag;
-    }
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #9b9997;
 
     &:hover {
       opacity: 0.6;
@@ -247,16 +236,11 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
-
-    &::after {
-      font-family: $sans-serif;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 130%;
-      color: #9b9997;
-      content: ""counter(flag);
-      counter-increment: flag;
-    }
+    font-family: $sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #9b9997;
 
     &:hover {
       opacity: 0.6;

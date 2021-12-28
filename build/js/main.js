@@ -224,10 +224,10 @@
 
     window.addEventListener('resize', () => {
       if (window.screen.width <= DESKTOP_WIDTH) {
-        restartSwiper(true);
+        setTimeout(() => restartSwiper(true), 500);
       }
       if (window.screen.width > DESKTOP_WIDTH) {
-        setInterval(() => location.reload(), 2000);
+        setTimeout(() => restartSwiper(false), 500);
       }
     });
   }
