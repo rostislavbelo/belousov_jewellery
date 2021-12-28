@@ -263,7 +263,7 @@
 
 //Переключение чекбоксов секции Filters с помощью клавиши Enter при управлении с клавиатуры.
 (function () {
-  const areaInputs = document.querySelectorAll('.filters__input-custom');
+  const areaInputs = document.querySelectorAll('.filter__input-custom');
 
   if (areaInputs) {
     areaInputs.forEach((area) => {

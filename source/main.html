@@ -582,7 +582,7 @@
         <form class="page-footer__form" action="https://echo.htmlacademy.ru" method="post">
           <input type="email" id="subscription" placeholder="Your E-mail" minlength="5" maxlength="80"
             autocomplete="off" name="subscription" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            title="Enter your e-mail. Format: sender@gmail.com">
+            title="Enter your e-mail. Format: sender@gmail.com" required>
           <label class="visually-hidden" for="subscription">Subscribe to useful news without spam</label>
           <button class="page-footer__button-submit" type="submit">Sign Up</button>
         </form>
@@ -676,8 +676,6 @@
   </footer>
   <div class="popup-login js__popup-login">
     <form class="popup-login__form login-form js__send-form" action="https://echo.htmlacademy.ru" method="post">
-      <button class="popup-login__button-closed login-form__button-closed js__popup-closed" type="button"
-        aria-label="Close the login window"></button>
       <p>Log In</p>
       <div class="login-form__input login-form__input-login">
         <input type="email" name="login" id="login" placeholder="Your E-mail" required minlength="5" maxlength="40"
@@ -695,6 +693,8 @@
         <span>Don’t have an account?</span>
         <a class="login-form__no-account-link" href="#"><span>Sign up</span></a>
       </div>
+      <button class="popup-login__button-closed login-form__button-closed js__popup-closed" type="button"
+        aria-label="Close the login window"></button>
     </form>
   </div>
   <script src="js/vendor.js"></script>

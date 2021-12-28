@@ -30,7 +30,7 @@
   top: 20px;
   right: 25px;
   width: 25px;
-  height: 20px;
+  height: 25px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -42,6 +42,7 @@
     background: #1d1613;
     transform: rotate(45deg);
     right: 1.5px;
+    bottom: 9px;
   }
 
   &::after {
@@ -51,6 +52,7 @@
     background: #1d1613;
     transform: rotate(-45deg);
     right: 1.5px;
+    bottom: 9px;
   }
 }
 
@@ -69,13 +71,18 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  color: #9b9997;
+  color: #000000;
   border-bottom: 1px solid #1d1613;
   width: 100%;
   height: 27px;
   padding: 0 0 3px 0;
   display: block;
   cursor: pointer;
+  border-radius: 0;
+
+  &::placeholder {
+    color: #9b9997;
+  }
 
   &:hover::placeholder {
     color: #000000;
@@ -112,6 +119,8 @@
   line-height: 18px;
   color: #9b9997;
   text-align: right;
+  width: max-content;
+  margin-left: auto;
 }
 
 .login-form__remember-password span:hover {
@@ -201,8 +210,8 @@
     display: none;
     position: absolute;
     top: 20px;
-    right: 25px;
-    width: 25px;
+    right: 27px;
+    width: 27px;
     height: 20px;
     background: transparent;
     border: none;
@@ -214,7 +223,8 @@
       height: 2.5px;
       background: #1d1613;
       transform: rotate(45deg);
-      right: 1.5px;
+      right: 1px;
+      bottom: 12px;
     }
 
     &::after {
@@ -223,7 +233,8 @@
       height: 2.5px;
       background: #1d1613;
       transform: rotate(-45deg);
-      right: 1.5px;
+      right: 1px;
+      bottom: 12px;
     }
   }
 
@@ -242,12 +253,16 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
-    color: #9b9997;
+    color: #000000;
     border-bottom: 1px solid #1d1613;
     width: 100%;
     height: 27px;
     padding: 0 0 3px 0;
     display: block;
+
+    &::placeholder {
+      color: #9b9997;
+    }
   }
 
   .login-form__input-password input {
@@ -276,6 +291,8 @@
     line-height: 18px;
     color: #9b9997;
     text-align: right;
+    width: max-content;
+    margin-left: auto;
   }
 
   .login-form__remember-password span:hover {
@@ -380,16 +397,18 @@
       height: 1.5px;
       background: #1d1613;
       transform: rotate(45deg);
-      right: 1.5px;
+      right: 1px;
+      bottom: 9px;
     }
 
     &::after {
       @include pseudo;
       width: 18px;
-      height: 1.5px;
+      height: 1px;
       background: #1d1613;
       transform: rotate(-45deg);
-      right: 1.5px;
+      right: 1px;
+      bottom: 9px;
     }
   }
 
@@ -408,12 +427,16 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
-    color: #9b9997;
+    color: #000000;
     border-bottom: 1px solid #1d1613;
     width: 100%;
     height: 27px;
     padding: 0 0 3px 0;
     display: block;
+
+    &::placeholder {
+      color: #9b9997;
+    }
   }
 
   .login-form__input-password input {
@@ -442,6 +465,8 @@
     line-height: 18px;
     color: #9b9997;
     text-align: right;
+    width: max-content;
+    margin-left: auto;
   }
 
   .login-form__remember-password span:hover {

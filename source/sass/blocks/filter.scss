@@ -175,7 +175,7 @@
   display: none;
 }
 
-.filter__input-custom input:checked + label::after {
+.filter__input-custom input:checked+label::after {
   display: block;
 }
 
@@ -262,6 +262,11 @@
     color: #1d1613;
     cursor: pointer;
     position: relative;
+    outline: none;
+
+    &:focus {
+      color: #a87b62;
+    }
 
     &::before {
       @include pseudo;
@@ -407,7 +412,7 @@
     display: none;
   }
 
-  .filter__input-custom input:checked + label::after {
+  .filter__input-custom input:checked+label::after {
     display: block;
   }
 
@@ -646,7 +651,7 @@
     display: none;
   }
 
-  .filter__input-custom input:checked + label::after {
+  .filter__input-custom input:checked+label::after {
     display: block;
   }
 

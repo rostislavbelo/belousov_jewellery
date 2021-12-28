@@ -38,7 +38,12 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  color: #9b9997;
+  color: #000000;
+  border-radius: 0;
+
+  &::placeholder {
+    color: #9b9997;
+  }
 
   &:hover::placeholder {
     color: #a87b62;
@@ -220,11 +225,12 @@
     height: 40px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 36px;
     z-index: 5;
     position: relative;
     background: rgba(255, 255, 255, 0.15);
     border-radius: 21px;
+    color: #ffffff;
 
     &::placeholder {
       color: transparent;
@@ -430,7 +436,7 @@
     height: 40px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 37px;
     z-index: 5;
     position: relative;
     background: rgba(255, 255, 255, 0.15);
@@ -459,8 +465,8 @@
     position: absolute;
     background: transparent;
     border: none;
-    top: 10px;
-    left: 4px;
+    top: 19px;
+    left: 7px;
   }
 
   .page-header__logo-wrapper {
