@@ -75,14 +75,8 @@
 
 .shopwindow__pages-item--active a {
   cursor: unset;
-
-  &::after {
-    color: #1d1613;
-  }
-
-  &:hover {
-    opacity: unset;
-  }
+  color: #1d1613;
+  opacity: unset;
 }
 
 @media (max-width: $desktop-width) {
