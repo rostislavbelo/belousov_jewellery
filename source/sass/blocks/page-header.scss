@@ -49,7 +49,7 @@
   }
 
   &:focus {
-    border-bottom: 2px solid #a87b62;
+    border-bottom: 1px solid #a87b62;
   }
 }
 
@@ -245,12 +245,16 @@
     &:active::placeholder {
       opacity: unset;
     }
+
+    &:focus {
+      border: 1px solid #ffffff;
+    }
   }
 
   .page-header__button-search svg {
     position: absolute;
-    top: 14px;
-    left: 9px;
+    top: 3px;
+    left: 6px;
     fill: #ffffff;
 
     &:hover {
@@ -268,8 +272,8 @@
     position: absolute;
     background: transparent;
     border: none;
-    top: 10px;
-    left: 4px;
+    top: 21px;
+    left: 7px;
   }
 
   .page-header__logo-wrapper {

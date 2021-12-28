@@ -177,7 +177,7 @@
     min-height: 586px;
     box-sizing: border-box;
     background-color: #f0eae4;
-    background-image: url("/img/login/background-tablet.jpg");
+    background-image: url("../img/login/background-tablet.jpg");
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
@@ -342,7 +342,7 @@
     min-height: 470px;
     box-sizing: border-box;
     background-color: #f0eae4;
-    background-image: url("/img/login/background-mobile.jpg");
+    background-image: url("../img/login/background-mobile.jpg");
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
@@ -355,7 +355,7 @@
     z-index: 55;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/login/background-mobile@2x.jpg") no-repeat;
+      background-image: url("/img/login/background-mobile@2x.jpg") no-repeat;
       background-size: contain;
     }
   }
