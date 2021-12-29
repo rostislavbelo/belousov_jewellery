@@ -56,7 +56,7 @@
 
   .catalog-promo__wrapper {
     width: 100%;
-    background: #a87b62 url("../img/catalog/background-top-desktop.jpg") no-repeat;
+    background: #a87b62 url("../img/catalog/tablet/background-top-tablet.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 261px;
@@ -64,7 +64,7 @@
     box-sizing: border-box;
 
     @media (min-resolution: 2dppx) {
-      background: #a87b62 url("../img/catalog/background-top-desktop@2x.jpg") no-repeat;
+      background: #a87b62 url("../img/catalog/tablet/background-top-tablet@2x.jpg") no-repeat;
       background-size: cover;
       background-position: center;
     }
