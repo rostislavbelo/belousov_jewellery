@@ -132,7 +132,7 @@
 
 
 //Управление слайдером-свайпером.
-(function () {
+/* (function () {
   const styleSwiperList = document.querySelector('.js__styles-swiper-list--no-js');
   const styleSwiperItem = document.querySelectorAll('.js__styles-swiper-item--no-js');
   const styleSwiperButton = document.querySelectorAll('.js__styles-swiper-button--no-js');
@@ -211,7 +211,7 @@
       // eslint-disable-next-line no-undef
       new Swiper(swiperArea, {
         simulateTouch: touch,
-        loop: true,
+        loop: false,
         breakpoints: {
           1023: SWIPER_DESKTOP,
           767: SWIPE_TABLET,
@@ -232,7 +232,7 @@
     });
   }
 }());
-
+ */
 //Управление аккордеоном секции Filters.
 (function () {
 
@@ -268,7 +268,8 @@
   if (areaInputs) {
     areaInputs.forEach((area) => {
       area.addEventListener('keydown', (evt) => {
-        if (evt.key === 'Enter') {
+        if (evt.keyCode === 32 || evt.key === 'Enter') {
+          evt.preventDefault();
           const enter = area.querySelector('input');
           enter.toggleAttribute('checked');
         }
@@ -337,6 +338,97 @@
       if (evt.target === backgroundPopup) {
         deactivePopupFilter();
       }
+    });
+  }
+}());
+
+(function () {
+  const styleSwiperList = document.querySelector('.js__styles-swiper-list--no-js');
+  const styleSwiperItem = document.querySelectorAll('.js__styles-swiper-item--no-js');
+  const styleSwiperButton = document.querySelectorAll('.js__styles-swiper-button--no-js');
+
+  if (styleSwiperList && styleSwiperItem && styleSwiperButton) {
+    styleSwiperList.classList.remove('js__styles-swiper-list--no-js');
+
+    styleSwiperItem.forEach((element) => {
+      element.classList.remove('js__styles-swiper-item--no-js');
+    });
+
+    styleSwiperButton.forEach((element) => {
+      element.classList.remove('js__styles-swiper-button--no-js');
+    });
+
+    const SWIPER_DESKTOP = {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${className}">${index + 1}</span>`;
+        },
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      simulateTouch: false,
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 30,
+    };
+
+    const SWIPE_TABLET = {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${className}">${index + 1}</span>`;
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      simulateTouch: true,
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+    };
+
+    const SWIPER_MOBILE = {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      simulateTouch: true,
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+    };
+
+    const swiperArea = document.querySelector('.swiper');
+
+    const swiper =
+      //Ниже строка не проверяется линтером - это вызов библиотеки слайдера-свайпера
+      // eslint-disable-next-line no-undef
+      new Swiper(swiperArea, {
+        loop: true,
+        breakpoints: {
+          1023: SWIPER_DESKTOP,
+          767: SWIPE_TABLET,
+          0: SWIPER_MOBILE,
+        },
+      });
+
+    swiper.on('breakpoint', () => {
+      swiper.pagination.render();
+      swiper.pagination.update();
     });
   }
 }());

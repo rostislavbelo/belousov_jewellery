@@ -203,14 +203,11 @@
     };
 
     const swiperArea = document.querySelector('.swiper');
-    const DESKTOP_WIDTH = 1023;
-    const desktopNoTouchValue = window.screen.width <= DESKTOP_WIDTH;
 
-    const restartSwiper = (touch) => {
+    const swiper =
       //Ниже строка не проверяется линтером - это вызов библиотеки слайдера-свайпера
       // eslint-disable-next-line no-undef
       new Swiper(swiperArea, {
-        simulateTouch: touch,
         loop: true,
         breakpoints: {
           1023: SWIPER_DESKTOP,
@@ -218,17 +215,10 @@
           0: SWIPER_MOBILE,
         },
       });
-    };
 
-    restartSwiper(desktopNoTouchValue);
-
-    window.addEventListener('resize', () => {
-      if (window.screen.width <= DESKTOP_WIDTH) {
-        setTimeout(() => restartSwiper(true), 500);
-      }
-      if (window.screen.width > DESKTOP_WIDTH) {
-        setTimeout(() => restartSwiper(false), 500);
-      }
+    swiper.on('breakpoint', () => {
+      swiper.pagination.render();
+      swiper.pagination.update();
     });
   }
 }());
@@ -261,14 +251,15 @@
 
 }());
 
-//Переключение чекбоксов секции Filters с помощью клавиши Enter при управлении с клавиатуры.
+//Переключение чекбоксов секции Filters с помощью клавиш Enter и Пробел при управлении с клавиатуры.
 (function () {
   const areaInputs = document.querySelectorAll('.filter__input-custom');
 
   if (areaInputs) {
     areaInputs.forEach((area) => {
       area.addEventListener('keydown', (evt) => {
-        if (evt.key === 'Enter') {
+        if (evt.keyCode === 32 || evt.key === 'Enter') {
+          evt.preventDefault();
           const enter = area.querySelector('input');
           enter.toggleAttribute('checked');
         }

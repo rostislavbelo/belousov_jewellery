@@ -175,7 +175,7 @@
   display: none;
 }
 
-.filter__input-custom input:checked+label::after {
+.filter__input-custom input:checked + label::after {
   display: block;
 }
 
@@ -412,7 +412,7 @@
     display: none;
   }
 
-  .filter__input-custom input:checked+label::after {
+  .filter__input-custom input:checked + label::after {
     display: block;
   }
 
@@ -651,7 +651,7 @@
     display: none;
   }
 
-  .filter__input-custom input:checked+label::after {
+  .filter__input-custom input:checked + label::after {
     display: block;
   }
 
