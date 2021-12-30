@@ -81,11 +81,27 @@
   height: 272px;
   margin: 0 0 21px 0;
   box-sizing: border-box;
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    width: 0;
+    height: 40px;
+    background: url("/img/icons/logo-copy.svg") no-repeat;
+    //z-index: -1;
+    bottom: 7px;
+    right: 7px;
+  }
 
   @media (min-width: 1023px) and (max-width: 1250px) {
     width: calc(1vw * 270 / (1250 / 100));
     height: calc(1vw * 272 / (1250 / 100));
   }
+}
+
+.goods-card__link:hover .goods-card__img-content::after {
+  width: 40px;
+  transition-duration: 0.5s;
 }
 
 @media (max-width: $desktop-width) {
@@ -102,6 +118,7 @@
   .goods-card__img-content {
     width: 206px;
     height: 208px;
+    position: relative;
 
     @media (min-width: 767px) and (max-width: 1024px) {
       width: calc(1vw * 206 / (767 / 100));
