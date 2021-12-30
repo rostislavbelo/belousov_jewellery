@@ -88,7 +88,6 @@
     width: 0;
     height: 40px;
     background: url("/img/icons/logo-copy.svg") no-repeat;
-    //z-index: -1;
     bottom: 7px;
     right: 7px;
   }
@@ -101,7 +100,7 @@
 
 .goods-card__link:hover .goods-card__img-content::after {
   width: 40px;
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
 }
 
 @media (max-width: $desktop-width) {
